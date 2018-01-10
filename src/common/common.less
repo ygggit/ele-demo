@@ -30,6 +30,7 @@ img{
 	padding: 0;
 }
 a{
+	display: inline-block;
 	color: #000;
 	&:hover,
 	&.is-hover{
@@ -42,6 +43,14 @@ a{
 .star-red{
 	color:#C53622;
 }
+.clearfixed:after{
+	display: block;
+	content:'';
+	height:0;
+	overflow: hidden;
+	clear:both;
+	visibility: hidden;
+}
 // 初始化样式 end
 
 .icon{
@@ -50,4 +59,22 @@ a{
 }
 .icon-menu{
 	.sprite(@menu)
+}
+.icon-search{
+	.sprite(@search)
+}
+.icon-shopping{
+	.sprite(@shopping)
+}
+.icon-cancel{
+	.sprite(@cancel)
+}
+.icon-my-account{
+	.sprite(@my-account)
+}
+.icon-arrow-left{
+	.sprite(@arrow-left)
+}
+.icon-open{
+	.sprite(@open)
 }

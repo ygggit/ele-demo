@@ -10,6 +10,10 @@ import VHeader from './components/header/header'
 import VFooter from './components/footer/footer'
 export default {
   name: 'app',
+  data(){
+      return{
+      }
+  },
   components: {
     VHeader,
     VFooter
