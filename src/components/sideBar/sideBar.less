@@ -1,0 +1,137 @@
+@charset "UTF-8";
+.nav-wrapper{
+    >ul{
+        font-size:0;
+        padding-left:0;
+        position: relative;
+        >li{
+            width: 36%;
+            padding-bottom: 0;
+            margin-left: 0;
+            background: #f7f7f7;
+            position: static;
+            >a{
+                display: block;
+                position: relative;
+                height: 64px;
+                padding:0 12px;
+                div{
+                    position: relative;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    .chineseName{
+                        font-family: PingFangSC-Regular;
+                        font-size: 14px;
+                        color: #333333;
+                        letter-spacing: 0.44px;
+                    }
+                    .englishName{
+                        font-family: HelveticaNeue;
+                        font-size: 10px;
+                        color: #999999;
+                        letter-spacing: 3px;
+                    }
+                    .icon-arrow-left{
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .sub-menu{
+                // display: none;
+                position: absolute;
+                top: 0;
+                left: 36%;
+                width: 64%;
+                z-index: 0;
+                >ul{
+                    padding-left: 0;
+                    >li{
+                        border-bottom: 1px solid #f2f0ee;
+                        >a{
+                            display: block;
+                            height: 64px;
+                            padding:0 12px;
+                            position: relative;
+                            img{
+                                display: inline-block;
+                                width: 40px;
+                                margin-right: 10px;
+                                margin-top: 12px;
+                            }
+                            p{
+                                font-size:0;
+                                display: inline-block;
+                                vertical-align: top;
+                                margin-top: 15px;
+                                span{
+                                    display: inline-block;
+                                    font-family: PingFangSC-Regular;
+                                    font-size: 14px;
+                                    color: #333333;
+                                    letter-spacing: 0.88px;
+                                    line-height: 20px;
+                                }
+                                small{
+                                    font-family: PingFangSC-Regular;
+                                    font-size: 10px;
+                                    color: #807C77;
+                                    letter-spacing: 1.7px;
+                                    line-height:14px;
+                                }
+                            }
+                            .icon-open{
+                                position: absolute;
+                                top: 50%;
+                                right: 12px;
+                                transform: translateY(-50%);
+                            }
+                        }
+                        >ul{
+                            // display: none;
+                            border-top: 1px solid #f2f0ee;
+                            padding-left: 12px;
+                            padding-bottom: 18px;
+                            li{
+                                width: 33.33%;
+                                float: left;
+                                padding: 6px;
+                                text-align: center;
+                                margin: 0;
+                                background: #fff;
+                                a{
+                                    p{
+                                        font-size:12px;
+                                        line-height: 16px;
+                                        color: #807c77;
+                                        letter-spacing: 0;
+                                        padding: 5px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.active{
+                background:#fff;
+                >a:before{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    right: 100%;
+                    bottom: 0;
+                    width: 4px;
+                    height: 100%;
+                    background: #ee1c25;
+                }
+                .sub-menu{
+                    // display: block;
+                }
+            }
+        }
+    }
+}

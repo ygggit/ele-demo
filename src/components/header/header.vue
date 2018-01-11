@@ -4,39 +4,28 @@
          <p>注册成为双立人会员并完善资料或得您的首单优惠券</p>
      </div>
      <div class="header-container clearfixed">
+         <!-- 左侧侧边栏按钮内容 -->
          <div class="header-left">
              <a href="#" @click="toggle()"><i class="icon icon-menu"></i></a>
+             <!-- 侧边栏 -->
              <div class="navbar-menu">
-              <!-- <mu-raised-button label="toggle drawer" @click="toggle()"/> -->
               <mu-drawer left :open="open" @close="toggle()" class="clearfixed">
-                <!-- <div class="mu-appbar mu-paper-1">
-                    <div class="left" @click="open=false">
-                        <i class="icon icon-cancel"></i>
-                    </div>
-                    <div class="mu-appbar-title">
-                        <a href="#"><img src="../../assets/logo.png"></a>
-                    </div>
-                     <div class="right">
-                         <i class="icon icon-my-account"></i>
-                     </div>
-                 </div> -->
                  <mu-appbar title="Title">
-                  <mu-icon-button icon=":icon icon-cancel" slot="left" />
-                  <mu-flat-button label="expand_more" slot="right"/>
-                  <mu-icon-button icon="expand_more" slot="right"/>
+                  <mu-icon-button icon=":icon icon-cancel" slot="left"  @click="open=false"/>
+                  <mu-flat-button label="" slot="center"/>
+                    <a href="#"><img src="../../assets/logo.png"></a>
+                  </mu-flat-button>
+                  <mu-icon-button icon=":icon icon-my-account" slot="right"/>
                 </mu-appbar>
-                <mu-list class="mu-list-left">
-                  <mu-list-item  v-for="val in list">
-                      <!-- <router-link :to="{ path:name.path }"> -->
+                <!-- <mu-list class="mu-list-left">
+                  <mu-list-item  v-for="(val,index) in list" :key="index">
                           <p class="chineseName">{{val.ChineseName}}</p>
                           <p class="englishName">{{val.EnglishName}}</p>
                           <i class="icon icon-arrow-left"></i>
-                      <!-- </router-link> -->
                   </mu-list-item>
                 </mu-list>
                 <mu-list class="mu-list-right">
-                <!-- <router-view></router-view> -->
-                  <mu-list-item  v-for="val in list">
+                  <mu-list-item  v-for="(val,index) in list" :key="index">
                       <a href="">
                           <img src="../../../static/header/menu_knife.png" alt="">
                           <p>
@@ -46,13 +35,30 @@
                           <i class="icon icon-open"></i>
                       </a>
                   </mu-list-item>
-                </mu-list>
+                </mu-list> -->
+                <!-- <mu-paper class="demo-menu">
+                 <mu-menu>
+                   <mu-menu-item title="Single"/>
+                   <mu-menu-item title="1.15"/>
+                   <mu-menu-item title="Double"/>
+                   <mu-menu-item title="Custom: 1.2" rightIcon="keyboard_arrow_right">
+                     <mu-menu-item title="Show"/>
+                     <mu-menu-item title="Grid lines" />
+                     <mu-menu-item title="Page breaks"/>
+                     <mu-menu-item title="Rules"/>
+                   </mu-menu-item>
+                 </mu-menu>
+               </mu-paper> -->
+
+               <sideBar></sideBar>
               </mu-drawer>
             </div>
          </div>
+         <!-- logo -->
          <div class="header-logo">
              <a href="#"><img src="../../assets/logo.png"></a>
          </div>
+         <!-- 搜索 -->
          <div class="header-right">
              <ul>
                  <li>
@@ -63,9 +69,6 @@
                          <i class="icon icon-shopping"></i>
                          <em>2</em>
                      </a>
-                     <!-- <mu-badge content="10" class="demo-icon-badge" circle secondary>
-                       <mu-icon value='' class="icon icon-shopping"/>
-                     </mu-badge> -->
                  </li>
              </ul>
          </div>
@@ -74,6 +77,7 @@
 </template>
 
 <script>
+import sideBar from "../sideBar/sideBar.vue"
 export default {
     data(){
         return{
@@ -129,7 +133,10 @@ export default {
         toggle () {
           this.open = !this.open
       }
-    }
+  },
+  components:{
+      sideBar
+  }
 }
 </script>
 

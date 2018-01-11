@@ -43,7 +43,7 @@
                     box-shadow: none;
                 }
                 .mu-appbar{
-                    // background: #fff;
+                    background: #fff;
                     height:64px;
                     padding:0 12px 0 9px;
                     &.mu-paper-1{
@@ -161,6 +161,24 @@
                     }
 
                 }
+                .mu-paper{
+                    .mu-menu-list{
+                        padding:0;
+                        >div{
+                            width: 36%;
+                            padding-bottom: 0;
+                            margin-left: 0;
+                            background: #f7f7f7;
+                            height: 64px;
+                        }
+                        &.mu-menu-destop{
+                            padding:0;
+                        }
+                    }
+                    &.mu-paper-1{
+                        box-shadow: none;
+                    }
+                }
             }
         }
         &.header-logo{
@@ -205,4 +223,12 @@
     }
 
   }
+}
+.mu-popover{
+    top: 64px;
+    left: 36%;
+    right: 0!important;
+    width: 64%;
+    height: 100%;
+    background: #fff;
 }
