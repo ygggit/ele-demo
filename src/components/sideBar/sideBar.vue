@@ -11,23 +11,27 @@
                 </a>
                 <div class="sub-menu" v-show="index===activeIndex">
                     <ul>
-                        <li v-for="(menuSubVal,index) in val.menuSub" :key="index" @click="toggleShowMenu(menuSubVal)">
+                        <li v-for="(menuSubVal,index) in val.menuSub" :key="index" @click="toggleShowMenu(isSubShow,index)" :class="{'is-open':index === secondActiveIndex}">
                             <a href="javascript:;">
                                 <img :src="menuSubVal.imgUrl" alt="">
                                 <p>
                                     <span>{{menuSubVal.menunamec}}</span><br>
                                     <small>{{menuSubVal.menunamee}}</small>
                                 </p>
-                                <i class="icon icon-open"></i>
+                                <i class="icon" :class="index === secondActiveIndex ? 'icon-hide' : 'icon-open'"></i>
                             </a>
-                            <ul class="clearfixed" v-show="menuSubVal.isSubShow">
-                                <li v-for="(classificationVal,index) in menuSubVal.classification" :key="index">
-                                    <router-link :to="{params:'' }">
-                                        <img :src="classificationVal.calssificateUrl" alt="">
-                                        <p>{{classificationVal.classificateName}}</p>
-                                    </router-link>
-                                </li>
-                            </ul>
+                            <!-- 过渡效果 -->
+                            <transition name="fade" mode="out-in">
+                                <!--  v-show="menuSubVal.isSubShow" -->
+                                <ul class="clearfixed">
+                                    <li v-for="(classificationVal,index) in menuSubVal.classification" :key="index">
+                                        <router-link :to="{params:'' }">
+                                            <img :src="classificationVal.calssificateUrl" alt="">
+                                            <p>{{classificationVal.classificateName}}</p>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </transition>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +45,10 @@ export default {
     data(){
         return{
             activeIndex:0,
+            secondActiveIndex:'',
             currentUrl:'',
+            isSubShow:false,
+            iconClass:['icon-open','icon-hide'],
             list:[
                 {
                     ChineseName:'双立人',
@@ -51,7 +58,7 @@ export default {
                             imgUrl:"../../../static/header/menu_knife.png",
                             menunamec:"刀具",
                             menunamee:"Knifes",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -79,7 +86,7 @@ export default {
                             imgUrl:"../../../static/header/menu_pot.png",
                             menunamec:"锅具",
                             menunamee:"Pots",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -107,7 +114,7 @@ export default {
                             imgUrl:"../../../static/header/menu_Small.png",
                             menunamec:"小家电",
                             menunamee:"Small Appliances",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -131,7 +138,7 @@ export default {
                             imgUrl:"../../../static/header/menu_other.png",
                             menunamec:"其他",
                             menunamee:"Others",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -165,7 +172,7 @@ export default {
                             imgUrl:"../../../static/header/menu_knife.png",
                             menunamec:"1刀具",
                             menunamee:"Knifes",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -193,7 +200,7 @@ export default {
                             imgUrl:"../../../static/header/menu_pot.png",
                             menunamec:"锅具",
                             menunamee:"Pots",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -221,7 +228,7 @@ export default {
                             imgUrl:"../../../static/header/menu_Small.png",
                             menunamec:"小家电",
                             menunamee:"Small Appliances",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -245,7 +252,7 @@ export default {
                             imgUrl:"../../../static/header/menu_other.png",
                             menunamec:"其他",
                             menunamee:"Others",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -279,7 +286,7 @@ export default {
                             imgUrl:"../../../static/header/menu_knife.png",
                             menunamec:"2刀具",
                             menunamee:"Knifes",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -307,7 +314,7 @@ export default {
                             imgUrl:"../../../static/header/menu_pot.png",
                             menunamec:"锅具",
                             menunamee:"Pots",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -335,7 +342,7 @@ export default {
                             imgUrl:"../../../static/header/menu_Small.png",
                             menunamec:"小家电",
                             menunamee:"Small Appliances",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -359,7 +366,7 @@ export default {
                             imgUrl:"../../../static/header/menu_other.png",
                             menunamec:"其他",
                             menunamee:"Others",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -393,7 +400,7 @@ export default {
                             imgUrl:"../../../static/header/menu_knife.png",
                             menunamec:"必备单品",
                             menunamee:"Knifes",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -421,7 +428,7 @@ export default {
                             imgUrl:"../../../static/header/menu_pot.png",
                             menunamec:"套装精选",
                             menunamee:"Pots",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -449,7 +456,7 @@ export default {
                             imgUrl:"../../../static/header/menu_Small.png",
                             menunamec:"礼意之选",
                             menunamee:"Small Appliances",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -473,7 +480,7 @@ export default {
                             imgUrl:"../../../static/header/menu_other.png",
                             menunamec:"销售榜单",
                             menunamee:"Others",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -507,7 +514,7 @@ export default {
                             imgUrl:"../../../static/header/menu_knife.png",
                             menunamec:"美食学院",
                             menunamee:"Knifes",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -535,7 +542,7 @@ export default {
                             imgUrl:"../../../static/header/menu_pot.png",
                             menunamec:"菜谱分享",
                             menunamee:"Pots",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -563,7 +570,7 @@ export default {
                             imgUrl:"../../../static/header/menu_Small.png",
                             menunamec:"视频专区",
                             menunamee:"Small Appliances",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -587,7 +594,7 @@ export default {
                             imgUrl:"../../../static/header/menu_other.png",
                             menunamec:"其他",
                             menunamee:"Others",
-                            isSubShow :false,
+                            // isSubShow :false,
                             classification:[
                                 {
                                     calssificateUrl:'../../../static/header/menu-scd@2x.png',
@@ -641,8 +648,9 @@ export default {
         changeMenu(index){
             this.activeIndex = index
         },
-        toggleShowMenu(menuSubVal){
-            menuSubVal.isSubShow = !menuSubVal.isSubShow
+        toggleShowMenu(isSubShow,index){
+            this.isSubShow = !this.isSubShow;
+            this.secondActiveIndex = index
             console.info(this)
         }
     }
