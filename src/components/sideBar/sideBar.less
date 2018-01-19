@@ -1,17 +1,12 @@
 @charset "UTF-8";
-.fade-enter-active,.fade-leave-active{
-    transition: all .5s ease;
+.fade-enter-active,.fade-leave-active {
+  transition: all 5.5s linear;
+  height: 100%;
 }
-.fade-enter-active{
-    opacity: 1;
+.fade-enter,.fade-leave-to {
+  height: 0;
+  opacity: 0;
 }
-.fade-leave-active{
-    opacity: 0;
-}
-.fade-enter,.fade-leave{
-    opacity: 0;
-}
-
 .nav-wrapper{
     >ul{
         font-size:0;
@@ -136,7 +131,7 @@
                                 }
                             }
                             >ul{
-                                display: block;   
+                                display: block;
                             }
                         }
                     }

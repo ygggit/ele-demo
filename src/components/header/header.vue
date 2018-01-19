@@ -49,8 +49,8 @@
                    </mu-menu-item>
                  </mu-menu>
                </mu-paper> -->
-
-               <sideBar></sideBar>
+               <!-- 侧边栏 -->
+               <sideBar :list = "list"></sideBar>
               </mu-drawer>
             </div>
          </div>
@@ -82,57 +82,33 @@ export default {
     data(){
         return{
              open: false,
-             list:[
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail1'
-                 },
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail2'
-                 },
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail3'
-                 },
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail4'
-                 },
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail5'
-                 },
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail6'
-                 },
-                 {
-                     ChineseName:'双立人',
-                     EnglishName:'Zwilling',
-                     path:'detail7'
-                 }, {
-                      ChineseName:'双立人',
-                      EnglishName:'Zwilling',
-                    path:'detail8'
-                  }, {
-                       ChineseName:'双立人',
-                       EnglishName:'Zwilling',
-                       path:'detail9'
-                   }
-             ]
+             list:[]
         }
     },
     methods:{
         toggle () {
           this.open = !this.open
       }
+  },
+  created(){
+      // 此方法要使用全局变量
+      // axios.get('../../data.json')
+      // .then(response => {
+      //     console.info(123)
+      // })
+      // .catch(error => {
+      //
+      // });
+      this.$http.get('../../../static/data.json')
+      .then(response => {
+          console.info(response.data.list)
+          this.list = response.data.list
+          // console.log(typeof(response.data));
+          // console.log(JSON.parse(response.data));
+      })
+      .catch(error => {
+
+      });
   },
   components:{
       sideBar

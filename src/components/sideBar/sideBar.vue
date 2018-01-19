@@ -11,18 +11,18 @@
                 </a>
                 <div class="sub-menu" v-show="index===activeIndex">
                     <ul>
-                        <li v-for="(menuSubVal,index) in val.menuSub" :key="index" @click="toggleShowMenu(isSubShow,index)" :class="{'is-open':index === secondActiveIndex}">
-                            <a href="javascript:;">
+
+                        <li v-for="(menuSubVal,index) in val.menuSub" :key="index"  :class="{'is-open':menuSubVal.isSubShow && index === secondActiveIndex}">
+                            <a href="javascript:;" @click="toggleShowMenu(menuSubVal,index)">
                                 <img :src="menuSubVal.imgUrl" alt="">
                                 <p>
                                     <span>{{menuSubVal.menunamec}}</span><br>
                                     <small>{{menuSubVal.menunamee}}</small>
                                 </p>
-                                <i class="icon" :class="index === secondActiveIndex ? 'icon-hide' : 'icon-open'"></i>
+                                <i class="icon" :class=" menuSubVal.isSubShow && index === secondActiveIndex ? 'icon-hide' : 'icon-open'"></i>
                             </a>
-                            <!-- 过渡效果 -->
-                            <transition name="fade" mode="out-in">
                                 <!--  v-show="menuSubVal.isSubShow" -->
+                            <transition name="fade">
                                 <ul class="clearfixed">
                                     <li v-for="(classificationVal,index) in menuSubVal.classification" :key="index">
                                         <router-link :to="{params:'' }">
@@ -30,6 +30,7 @@
                                             <p>{{classificationVal.classificateName}}</p>
                                         </router-link>
                                     </li>
+
                                 </ul>
                             </transition>
                         </li>
@@ -42,600 +43,17 @@
 
 <script>
 export default {
+    props:{
+        list: {
+          type: Array
+        }
+    },
     data(){
         return{
             activeIndex:0,
             secondActiveIndex:'',
             currentUrl:'',
-            isSubShow:false,
-            iconClass:['icon-open','icon-hide'],
-            list:[
-                {
-                    ChineseName:'双立人',
-                    EnglishName:'Zwilling',
-                    menuSub:[
-                        {
-                            imgUrl:"../../../static/header/menu_knife.png",
-                            menunamec:"刀具",
-                            menunamee:"Knifes",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'水果刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'中片刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'多用刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'热销组合'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ],
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_pot.png",
-                            menunamec:"锅具",
-                            menunamee:"Pots",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'平底锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'炖锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'锅具配件'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'锅具套餐'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_Small.png",
-                            menunamec:"小家电",
-                            menunamee:"Small Appliances",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'厨师机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'料理机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'搅拌机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_other.png",
-                            menunamec:"其他",
-                            menunamee:"Others",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'炊具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'西餐具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'玻璃器皿'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'美甲产品'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                    ]
-                },
-                {
-                    ChineseName:'珐宝*',
-                    EnglishName:'Staub',
-                    menuSub:[
-                        {
-                            imgUrl:"../../../static/header/menu_knife.png",
-                            menunamec:"1刀具",
-                            menunamee:"Knifes",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'水果刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'中片刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'多用刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'热销组合'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_pot.png",
-                            menunamec:"锅具",
-                            menunamee:"Pots",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'平底锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'炖锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'锅具配件'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'锅具套餐'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_Small.png",
-                            menunamec:"小家电",
-                            menunamee:"Small Appliances",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'厨师机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'料理机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'搅拌机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_other.png",
-                            menunamec:"其他",
-                            menunamee:"Others",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'炊具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'西餐具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'玻璃器皿'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'美甲产品'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                    ]
-                },
-                {
-                    ChineseName:'巴拉利尼',
-                    EnglishName:'Ballarini',
-                    menuSub:[
-                        {
-                            imgUrl:"../../../static/header/menu_knife.png",
-                            menunamec:"2刀具",
-                            menunamee:"Knifes",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'水果刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'中片刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'多用刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'热销组合'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_pot.png",
-                            menunamec:"锅具",
-                            menunamee:"Pots",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'平底锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'炖锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'锅具配件'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'锅具套餐'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_Small.png",
-                            menunamec:"小家电",
-                            menunamee:"Small Appliances",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'厨师机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'料理机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'搅拌机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_other.png",
-                            menunamec:"其他",
-                            menunamee:"Others",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'炊具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'西餐具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'玻璃器皿'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'美甲产品'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                    ]
-                },
-                {
-                    ChineseName:'热销分类',
-                    EnglishName:'Zwilling',
-                    menuSub:[
-                        {
-                            imgUrl:"../../../static/header/menu_knife.png",
-                            menunamec:"必备单品",
-                            menunamee:"Knifes",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'水果刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'中片刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'多用刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'热销组合'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_pot.png",
-                            menunamec:"套装精选",
-                            menunamee:"Pots",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'平底锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'炖锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'锅具配件'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'锅具套餐'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_Small.png",
-                            menunamec:"礼意之选",
-                            menunamee:"Small Appliances",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'厨师机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'料理机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'搅拌机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_other.png",
-                            menunamec:"销售榜单",
-                            menunamee:"Others",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'炊具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'西餐具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'玻璃器皿'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'美甲产品'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                    ]
-                },
-                {
-                    ChineseName:'双立人活动',
-                    EnglishName:'Zwilling',
-                    menuSub:[
-                        {
-                            imgUrl:"../../../static/header/menu_knife.png",
-                            menunamec:"美食学院",
-                            menunamee:"Knifes",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'水果刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'中片刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'多用刀'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'热销组合'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_pot.png",
-                            menunamec:"菜谱分享",
-                            menunamee:"Pots",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'平底锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'炖锅'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'锅具配件'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'锅具套餐'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_Small.png",
-                            menunamec:"视频专区",
-                            menunamee:"Small Appliances",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'厨师机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'料理机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'搅拌机'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                        {
-                            imgUrl:"../../../static/header/menu_other.png",
-                            menunamec:"其他",
-                            menunamee:"Others",
-                            // isSubShow :false,
-                            classification:[
-                                {
-                                    calssificateUrl:'../../../static/header/menu-scd@2x.png',
-                                    classificateName:'炊具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zpd@2x.png',
-                                    classificateName:'西餐具'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-dy@2x.png',
-                                    classificateName:'玻璃器皿'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-zuhe@2x.png',
-                                    classificateName:'美甲产品'
-                                },
-                                {
-                                    calssificateUrl:'../../../static/header/menu-all@2x.png',
-                                    classificateName:'查看全部'
-                                }
-                            ]
-                        },
-                    ]
-                },
-                {
-                    ChineseName:'双立人故事',
-                    EnglishName:'',
-                    menuSub:[
-
-                    ],
-                    menuUrl: "https://www.baidu.com/"
-                },
-                {
-                    ChineseName:'美食分院',
-                    EnglishName:'',
-                    menuSub:[
-                    ],
-                    menuUrl: "https://www.baidu.com/"
-                }
-            ]
+            iconClass:['icon-open','icon-hide']
         }
     },
     watch: {
@@ -644,15 +62,33 @@ export default {
       // }
 
     },
+    computed:{
+        listData:function () {
+            return this.$parent.$data.list;
+        }
+    },
     methods:{
         changeMenu(index){
+
             this.activeIndex = index
         },
-        toggleShowMenu(isSubShow,index){
-            this.isSubShow = !this.isSubShow;
-            this.secondActiveIndex = index
-            console.info(this)
+        toggleShowMenu(menuSubVal,index){
+            // for(let [itemIndex, item] of data.entries()){
+                // console.info(item,'item')
+                // console.info(itemIndex,'itemIndex')
+                // console.info(index)
+                // if(itemIndex === index){
+                    menuSubVal.isSubShow = !menuSubVal.isSubShow
+                // }else{
+                    // item.isSubShow = false;
+                // }
+            // }
+            this.secondActiveIndex = index;
+
         }
+    },
+    created(){
+        console.info(this)
     }
 }
 </script>
