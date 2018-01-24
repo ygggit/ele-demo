@@ -9,7 +9,12 @@ Vue.config.productionTip = false
 // 引入ui
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.min.css';
+// 注意要写依赖
+require('!style-loader!css-loader!less-loader!./common/common.less');
 Vue.use(MuseUI)
+Vue.use(VueAwesomeSwiper)
 // global.axios=axios
 Vue.prototype.$http = axios
 /* eslint-disable no-new */
