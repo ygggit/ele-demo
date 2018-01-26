@@ -10,7 +10,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const SpritesmithPlugin = require('webpack-spritesmith')
-
+var history = require('connect-history-api-fallback');
+// var connect = require('connect');
+// var app = express()
+// app.use(require('connect-history-api-fallback')())
+  // .use(history())
+  // .listen(8083);
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 

@@ -11,26 +11,23 @@
                 </a>
                 <div class="sub-menu" v-show="index===activeIndex">
                     <ul>
-
-                        <li v-for="(menuSubVal,index) in val.menuSub" :key="index"  :class="{'is-open':menuSubVal.isSubShow && index === secondActiveIndex}">
-                            <a href="javascript:;" @click="toggleShowMenu(menuSubVal,index)">
+                        <li v-for="(menuSubVal,selfIndex) in val.menuSub" :key="selfIndex"  :class="{'is-open':menuSubVal.isSubShow && selfIndex === secondActiveIndex}">
+                            <a href="javascript:;" @click="toggleShowMenu(index,selfIndex)">
                                 <img :src="menuSubVal.imgUrl" alt="">
                                 <p>
                                     <span>{{menuSubVal.menunamec}}</span><br>
                                     <small>{{menuSubVal.menunamee}}</small>
                                 </p>
-                                <i class="icon" :class=" menuSubVal.isSubShow && index === secondActiveIndex ? 'icon-hide' : 'icon-open'"></i>
+                                <i class="icon" :class=" menuSubVal.isSubShow && selfIndex === secondActiveIndex ? 'icon-hide' : 'icon-open'"></i>
                             </a>
-                                <!--  v-show="menuSubVal.isSubShow" -->
                             <transition name="fade">
                                 <ul class="clearfixed">
-                                    <li v-for="(classificationVal,index) in menuSubVal.classification" :key="index">
-                                        <router-link :to="{params:'' }">
+                                    <li v-for="(classificationVal,index) in menuSubVal.classification" :key="index" @click="hideSide(open)">
+                                        <router-link to="/plp" >
                                             <img :src="classificationVal.calssificateUrl" alt="">
                                             <p>{{classificationVal.classificateName}}</p>
                                         </router-link>
                                     </li>
-
                                 </ul>
                             </transition>
                         </li>
@@ -42,6 +39,7 @@
 </template>
 
 <script>
+import Bus from '../../bus.js'
 export default {
     props:{
         list: {
@@ -50,6 +48,7 @@ export default {
     },
     data(){
         return{
+            open:false,
             activeIndex:0,
             secondActiveIndex:'',
             currentUrl:'',
@@ -60,30 +59,41 @@ export default {
       // '$route'() {
       //   this.currentUrl = this.$route.fullPath; // 实时监测当前路由的变化并且赋值
       // }
-
     },
     computed:{
-        listData:function () {
-            return this.$parent.$data.list;
-        }
+        // listData:function () {
+        //     return this.$parent.$data.list;
+        // }
     },
     methods:{
+        hideSide(){
+            Bus.$emit('txt',this.open);
+        },
         changeMenu(index){
-
             this.activeIndex = index
         },
-        toggleShowMenu(menuSubVal,index){
-            // for(let [itemIndex, item] of data.entries()){
-                // console.info(item,'item')
-                // console.info(itemIndex,'itemIndex')
-                // console.info(index)
-                // if(itemIndex === index){
-                    menuSubVal.isSubShow = !menuSubVal.isSubShow
-                // }else{
-                    // item.isSubShow = false;
-                // }
+        toggleShowMenu(index,selfIndex){
+            // 第一种方案
+            // for(let [itemIndex, item] of this.list.entries()){
+            //     for(let [itemIndex1, item1] of item.menuSub.entries() ){
+            //         console.info(item1.isSubShow)
+            //         if(itemIndex1 === index){
+            //             item1.isSubShow = !item1.isSubShow
+            //         }else{
+            //             item1.isSubShow = false;
+            //         }
+            //     }
             // }
-            this.secondActiveIndex = index;
+            // 第二种
+            for(let [itemIndex, item] of this.list[index].menuSub.entries() ){
+                console.info(this.list[index].menuSub)
+                if(itemIndex === selfIndex){
+                    item.isSubShow = !item.isSubShow
+                }else{
+                    item.isSubShow = false;
+                }
+            }
+            this.secondActiveIndex = selfIndex;
 
         }
     },

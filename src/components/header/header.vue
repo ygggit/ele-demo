@@ -77,6 +77,7 @@
 </template>
 
 <script>
+import Bus from '../../bus.js'
 import sideBar from "../sideBar/sideBar.vue"
 export default {
     data(){
@@ -85,12 +86,24 @@ export default {
              list:[]
         }
     },
+    mounted:function(){
+        var _this=this;
+        Bus.$on('txt',function(open){//监听first组件的txt事件
+          _this.open = open ;
+          console.log(_this.open);
+        });
+    },
     methods:{
         toggle () {
-          this.open = !this.open
-      }
-  },
-  created(){
+            console.log(123)
+            console.log(this.open)
+            this.open = ! this.open
+            console.log(this.open)
+          // this.open = !this.open;
+
+        }
+    },
+    created(){
       // 此方法要使用全局变量
       // axios.get('../../data.json')
       // .then(response => {

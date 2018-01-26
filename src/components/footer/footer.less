@@ -1,0 +1,155 @@
+@charset "UTF-8";
+.footer{
+    background:#fff;
+    .log-register-box{
+        border-top:1px solid #E1E1E1;
+        border-bottom:1px solid #E1E1E1;
+        margin-top:9px;
+        >div{
+            float:left;
+            width:50%;
+            margin:16px 0;
+            text-align: center;
+            position: relative;
+            a{
+                font-size: 14px;
+                color: #333333;
+                letter-spacing: 0;
+                line-height: 16px;
+                i{
+                    vertical-align: middle;
+                    margin-right:8px;
+                }
+            }
+            &:nth-child(1):after{
+                position: absolute;
+                display: block;
+                content:'';
+                top: 3px;
+                right:0px;
+                height:18px;
+                width:1px;
+                background: #E1E1E1;
+            }
+        }
+    }
+    .subscribe-mail{
+        padding:0 12px;
+        box-sizing: border-box;
+        >p{
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: 0.58px;
+            line-height: 16px;
+            margin:20px 0 15px 0;
+        }
+        .form-box{
+            .form-input{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                font-size:0;
+                input{
+                    box-sizing: border-box;
+                    background: #FFFFFF;
+                    border: 1px solid #F1F0EE;
+                    border-radius: 2px;
+                    width:-moz-calc( ~"100% - 128px" );
+                    width:-webkit-calc( ~"100% - 128px");
+                    width: calc( ~"100% - 128px");
+                    vertical-align: middle;
+                    font-size: 14px;
+                    color: #cccbc9;
+                    letter-spacing: 0.58px;
+                    padding-left:12px;
+                    border-right: 0;
+                    height: 40px;
+                }
+                a{
+                    display: inline-block;
+                    width:128px;
+                    background: #807C77;
+                    font-size: 14px;
+                    color: #FFFFFF;
+                    letter-spacing: 0.58px;
+                    text-align: center;
+                    line-height: 40px;
+                    vertical-align: middle;
+                }
+            }
+            .msg-block{
+                margin-top:10px;
+                display: none;
+                span{
+                    font-size: 14px;
+                    color: #ee1c25;
+                    letter-spacing: .62px;
+                }
+            }
+            &.is-error{
+                .msg-block{
+                    display: block;
+                }
+            }
+        }
+    }
+    .attention-us{
+        padding:17px 12px;
+        span{
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: 0;
+            line-height: 16px;
+            margin-right:21px;
+            vertical-align: middle;
+        }
+        a{
+            height: 24px;
+            vertical-align: middle;
+            i{
+                margin:0 15px;
+            }
+        }
+    }
+    .footer-help-box{
+        >ul{
+            >li{
+                border-top:1px solid #e1e1e1;
+                >a{
+                    padding:0 12px;
+                    display: block;
+                    font-size: 14px;
+                    color: #333333;
+                    letter-spacing: 0;
+                    position: relative;
+                    width: 100%;
+                    line-height: 45px;
+                    i{
+                        position: absolute;
+                        top:50%;
+                        transform: translateY(-50%);
+                        right:12px;
+                    }
+                }
+                >ul{
+                    background:#f7f7f7;
+                    display: none;
+                    li{
+                        a{
+                            display: block;
+                            font-size: 14px;
+                            color: #807c77;
+                            letter-spacing: .62px;
+                            padding: 10px 12px;
+                        }
+                    }
+                }
+                &.open{
+                    >ul{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
