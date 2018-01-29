@@ -5,12 +5,14 @@
          <router-view></router-view>
      </div>
     <v-footer></v-footer>
+    <back-top :scrollmyself = 'true'></back-top>
   </div>
 </template>
 
 <script>
 import VHeader from './components/header/header'
 import VFooter from './components/footer/footer'
+import BackTop from './components/back-top/back-top'
 export default {
   name: 'app',
   data(){
@@ -21,6 +23,7 @@ export default {
   components: {
     VHeader,
     VFooter,
+    BackTop
   },
 
 

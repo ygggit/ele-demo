@@ -10,7 +10,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const SpritesmithPlugin = require('webpack-spritesmith')
-var history = require('connect-history-api-fallback');
+const express = require('express')
+
+
+// var history = require('connect-history-api-fallback');
 // var connect = require('connect');
 // var app = express()
 // app.use(require('connect-history-api-fallback')())

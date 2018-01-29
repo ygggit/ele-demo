@@ -1,6 +1,9 @@
 @charset "UTF-8";
-.condition-option{
+.conditionOption{
     border-top:1px solid #f2f0ee;
+    width: 100%;
+    background:#fff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.25);
     ul{
         font-size:0;
         li{
@@ -27,7 +30,15 @@
                     margin-left:4px;
                 }
             }
+            &:nth-child(1){
+                border-right:1px solid #f2f0ee;
+            }
         }
+    }
+    &.isFixed{
+        position: fixed;
+        top:84px;
+        z-index: 9;
     }
 }
 .product-plp-box{

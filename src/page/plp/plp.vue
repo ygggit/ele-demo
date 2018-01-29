@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="plp-wrapper">
-      <div class="condition-option" :class="filter-fixed">
+      <div class="conditionOption" ref="conditionOption" :class="filterFixed ? 'isFixed':'' " >
           <ul class="clearfixed">
               <li>
                   <span>筛选条件<i class="down-menu"></i></span>
@@ -21,10 +21,12 @@
 
 <script>
 import product from "../../components/product/product"
+// 注意此悬顶效果在app上可能会出现抖动问题，请参考bug.text
 export default {
     data(){
         return{
-            "productList":[]
+            "productList":[],
+            "filterFixed":''
         }
     },
     created(){
@@ -34,10 +36,30 @@ export default {
             this.productList = res.data.productList
         })
     },
+    mounted(){
+        window.addEventListener('scroll',this.handleScroll);
+    },
+    methods:{
+        handleScroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            let offsetTop = this.$refs.conditionOption.offsetTop
+            // var offsetTop = document.querySelector('.condition-option').offsetTop
+            if(scrollTop > offsetTop){
+                this.filterFixed = true;
+            }else{
+                this.filterFixed = false;
+            }
+        },
+    },
+    destroyed () {
+        console.log('离开')
+      window.removeEventListener('scroll', this.handleScroll)
+    },
     components:{
         product
     }
 }
+
 </script>
 
 <style lang="less" scoped>
