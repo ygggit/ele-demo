@@ -32,7 +32,7 @@
             </a>
         </div>
         <div class="footer-help-box">
-            <ul>
+            <!-- <ul>
                 <li v-for="(val,index) in helpList" :key="index" :class="{'open':val.isShow && index === isActiveIndex}">
                     <a href="javascript:;" @click="toggle(val,index)">
                         {{val.listName}}
@@ -45,12 +45,14 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
+            <footer-select :helpList="helpList"></footer-select>
         </div>
     </div>
 </template>
 
 <script>
+import footerSelect from '../../components/footer-select/footer-select'
 export default {
     data(){
         return{
@@ -94,25 +96,8 @@ export default {
             ]
         }
     },
-    methods:{
-        toggle(val,index){
-            let that = this;
-            that.isActiveIndex = index;
-            for(let[itemIndex,item] of that.helpList.entries()){
-                // console.info(index,'名称')
-                // console.info(item,'值')
-                // console.info(index)
-                if(itemIndex === index){
-                    console.log(1)
-                    item.isShow = !item.isShow;
-                    console.log(item.isShow)
-                }else{
-                    console.log(2)
-                    item.isShow = false
-                }
-            }
-            // console.info(val.isShow && index === that.isActiveIndex)
-        }
+    components:{
+        footerSelect
     }
 }
 </script>

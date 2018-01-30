@@ -3,6 +3,9 @@
     <swiper-slide v-for="(img,index) in imgList" :key="index">
         <a :href="img.url">
             <img :src="img.imgLink">
+            <div class="new-product" v-show="img.tag.length>0">
+                <span>{{img.tag}}</span>
+            </div>
         </a>
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>
@@ -14,22 +17,9 @@
 <script>
 import {swiper,swiperSlide} from 'vue-awesome-swiper'
 export default {
+    props:['imgList'],
     data(){
         return{
-            "imgList":[
-                {
-                    "imgLink":"../../../static/kv/kv-scroll.png",
-                    "url":'https://www.baidu.com/'
-                },
-                {
-                    "imgLink":"../../../static/kv/kv-scroll.png",
-                    "url":'http://starcraft.com'
-                },
-                {
-                    "imgLink":"../../../static/kv/kv-scroll.png",
-                    "url":'http://warcraft.com'
-                }
-            ],
             swiperOption:{
                 loop:true,
                 notNextTick:true,
@@ -70,9 +60,22 @@ export default {
     width:100%;
     .swiper-slide a{
         width: 100%;
-        img{
+        position: relative;
+        >img{
             width:100%;
         }
+        .new-product{
+    		position: absolute;
+    		background:#edecec;
+    		padding:2px 6px;
+    		top:7px;
+    		left:9px;
+    		span{
+    			font-size: 12px;
+    			color: #807C77;
+    			letter-spacing: 0;
+    		}
+    	}
     }
 }
 .swiper-container-horizontal>.swiper-pagination-bullets{

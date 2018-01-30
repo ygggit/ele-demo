@@ -1,22 +1,22 @@
 <template lang="html">
     <div class="clearfixed">
         <div class="product-list"  v-for="(val,index) in productList" :key="index">
-            <a href="#" class="product-img">
+            <router-link to="/pdp" class="product-img">
                 <!-- <img :src="val.imgSrc" alt=""> -->
                 <img v-lazy="val.imgSrc" alt="">
                 <div class="new-product" v-show="val.tag.length>0">
                     <span>{{val.tag}}</span>
                 </div>
-            </a>
+            </router-link>
             <div class="product-detail">
-                <a href="#">
+                <router-link to="/pdp">
                     <p class="product-brand">{{val.productBrand}}</p>
                     <p class="product-name">{{val.productName}}</p>
                     <div class="product-price">
                         <span class="now-price">{{val.nowPrice}}</span>
                         <del class="old-price">{{val.oldPrice}}</del>
                     </div>
-                </a>
+                </router-link>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="">
-      <p>foo</p>
+  <div class="product-info">
+      <img src="../../../static/img/product-info-img.png" alt="">
   </div>
 </template>
 

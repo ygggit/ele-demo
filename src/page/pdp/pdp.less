@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.pdp-wrapper{
+    background:#f7f7f7;
+    .product-detail-box{
+        background:#fff;
+        .product-detail{
+            padding:0 12px;
+            width: 100%;
+            .product-detail-name{
+                float:left;
+                width:84%;
+                h2{
+                    font-size: 16px;
+                    color: #333333;
+                    letter-spacing: 0;
+                    line-height: 28px;
+                }
+                p{
+                    font-size: 12px;
+                    color: #807C77;
+                    letter-spacing: 0;
+                    line-height: 12px;
+                    margin-top:8px;
+                }
+            }
+            .product-detail-share{
+                float:left;
+                width:16%;
+                line-height: 28px;
+                .icon-share{
+                    vertical-align: middle;
+                }
+                span{
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #333333;
+                    letter-spacing: 0;
+                    line-height:18px;
+                }
+            }
+        }
+        .promotion{
+            background: #F8F8F8;
+            margin:12px 0 0 0px;
+            padding:13px 0 13px 12px;
+            span{
+                display: inline-block;
+                font-size: 12px;
+                color: #333333;
+                letter-spacing: 0;
+                line-height: 14px;
+            }
+        }
+        .product-detail-price{
+            padding:18px 0 18px 12px;
+            .pdp-new-price{
+                font-size: 24px;
+                color: #EE1D25;
+                letter-spacing: 0;
+                line-height: 20px;
+            }
+            .pdp-old-price{
+                font-size: 14px;
+                color: #CCCBC9;
+                letter-spacing: 0;
+                margin-lefT:6px;
+            }
+        }
+        .product-list-item{
+            .productItem{
+                padding:15px 0;
+                margin:0 12px;
+                border-top:1px solid #F1F0EE;
+                position: relative;
+                >span{
+                    font-size: 14px;
+                    color: #333333;
+                    letter-spacing: 0;
+                    line-height: 14px;
+                    display: block;
+                    i{
+                        position: absolute;
+                        right: 12px;
+                        top: 19px;
+                    }
+                }
+                .pdp-detail{
+                    font-size: 12px;
+                    color: #807C77;
+                    letter-spacing: 0;
+                    line-height: 20px;
+                    padding:10px 0 0 0;
+                }
+            }
+        }
+    }
+    .product-info-box{
+        margin-top:10px;
+        .product-info-title{
+            font-size: 0;
+            .product-infomation{
+                background: #fff;
+                ul{
+                    font-size:0;
+                    li{
+                        display: inline-block;
+                        width:33.33%;
+                        text-align:center;
+                        position:relative;
+                        p{
+                            padding:15px 0;
+                            font-size: 14px;
+                            color: #807C77;
+                            letter-spacing: 0;
+                            line-height: 14px;
+                        }
+                        &.active:after{
+                            position: absolute;
+                            display: block;
+                            content: '';
+                            width:100%;
+                            height:3px;
+                            background: #EE1D25;
+                        }
+                    }
+                }
+                .title{
+                    display: inline-block;
+                    width:33.33%;
+                    text-align:center;
+                    position:relative;
+                    a{
+                        padding:15px 0;
+                        display: block;
+                        font-size: 14px;
+                        color: #807C77;
+                        letter-spacing: 0;
+                        line-height: 14px;
+                        &.router-link-active{
+                            border-bottom:3px solid #EE1D25;
+                        }
+                    }
+                }
+            }
+        }
+        .product-info-container{
+            border-top:1px solid #f7f7f7;
+        }
+    }
+}

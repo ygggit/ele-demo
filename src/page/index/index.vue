@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="container-box container-bg">
-        <scroll></scroll>
+        <scroll :imgList="imgList"></scroll>
         <div class="box-container">
            <div class="title">
                <h2>旗下品牌</h2>
@@ -181,6 +181,23 @@ import {swiper,swiperSlide} from 'vue-awesome-swiper'
 export default {
     data(){
         return{
+            "imgList":[
+                {
+                    "imgLink":"../../../static/kv/kv-scroll.png",
+                    "tag":"",
+                    "url":'https://www.baidu.com/'
+                },
+                {
+                    "imgLink":"../../../static/kv/kv-scroll.png",
+                    "tag":"",
+                    "url":'http://starcraft.com'
+                },
+                {
+                    "imgLink":"../../../static/kv/kv-scroll.png",
+                    "tag":"",
+                    "url":'http://warcraft.com'
+                }
+            ],
             "storyImg":[
                 {
                     "imgSrc":"../../../static/img/pic-college@2x.png",

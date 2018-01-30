@@ -12,6 +12,7 @@ import 'muse-ui/dist/muse-ui.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.min.css';
 import VueLazyload from 'vue-lazyload'
+import $ from 'jquery'
 // 注意要写依赖
 require('!style-loader!css-loader!less-loader!./common/common.less');
 Vue.use(MuseUI)

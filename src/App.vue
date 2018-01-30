@@ -2,7 +2,9 @@
   <div id="app">
      <v-header></v-header>
      <div class="zwilling-container">
-         <router-view></router-view>
+         <keep-alive>
+           <router-view></router-view>
+         </keep-alive>
      </div>
     <v-footer></v-footer>
     <back-top :scrollmyself = 'true'></back-top>
