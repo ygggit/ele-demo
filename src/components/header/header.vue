@@ -65,9 +65,9 @@
                      <a href="#"><i class="icon icon-search"></i></a>
                  </li>
                  <li>
-                     <a href="#">
+                     <a href="../../../shop.html">
                          <i class="icon icon-shopping"></i>
-                         <em>2</em>
+                         <em>{{cartNum}}</em>
                      </a>
                  </li>
              </ul>
@@ -82,15 +82,21 @@ import sideBar from "../sideBar/sideBar.vue"
 export default {
     data(){
         return{
-             open: false,
-             list:[]
+             "open": false,
+             "cartNum":0,
+             "list":[]
         }
     },
     mounted:function(){
         var _this=this;
-        Bus.$on('txt',function(open){//监听first组件的txt事件
+        // 接收数据 侧边
+        Bus.$on('txt',function(open,){//监听first组件的txt事件
           _this.open = open ;
           console.log(_this.open);
+        });
+        Bus.$on('txt1',function(cartNum){//监听first组件的txt事件
+          _this.cartNum =cartNum;
+          console.log(_this.cartNum)
         });
     },
     methods:{

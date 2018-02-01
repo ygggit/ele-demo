@@ -67,6 +67,7 @@ export default {
     },
     methods:{
         hideSide(){
+            // 传递数据
             Bus.$emit('txt',this.open);
         },
         changeMenu(index){

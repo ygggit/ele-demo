@@ -25,6 +25,7 @@ export default new Router({
       path: '/pdp',
       name: 'pdp',
       component: pdp,
+      redirect: '/productIntroduction',
       children:[
           {
               path: '/productIntroduction',
@@ -40,7 +41,7 @@ export default new Router({
               path: '/productMaintenance',
               name: 'productMaintenance',
               component: productMaintenance,
-          }          
+          }
       ]
   },
   ]

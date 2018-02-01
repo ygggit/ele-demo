@@ -21,7 +21,7 @@
               <span class="pdp-old-price">￥699.00</span>
           </div>
           <div class="product-list-item event-pdp-detail">
-              <div class="productItem">
+              <div class="productItem" @click="productSelect">
                   <span>选择规格/数量：<i class="icon icon-arrow-left"></i></span>
               </div>
               <div class="productItem productItem1">
@@ -40,6 +40,24 @@
                       <p>刀柄颜色：黑色</p>
                       <p>用途：为中式料理设计，切鱼、肉、蔬菜均可</p>
                   </div>
+              </div>
+          </div>
+          <!-- 商品种类 数量选择 -->
+          <div class="product-mask" v-show="showProduct" @click="hideProduct"></div>
+          <div class="product-sku-fixed" v-show="showProduct" :class="showProduct ? 'show-product-sku-fixed':''">
+              <div class="product-sku">
+                  <div class="product-select product-specification">
+                      <p>规格选择：</p>
+                      <selectSpecification :specification="specification"></selectSpecification>
+                  </div>
+                  <div class="product-select product-num">
+                      <p>数量选择</p>
+                      <num @buyNumber="get" :count="buyNum"></num>
+                  </div>
+                  <div class="product-collection" @click="collect">
+                      <span><i class="icon" :class="changeIcon ? 'icon-like-pressed':'icon-like'"></i>添加至收藏夹</span>
+                  </div>
+                  <a href="javascript:;" class="btn-close" @click="hideProduct"><i class="icon icon-close"></i></a>
               </div>
           </div>
 
@@ -84,15 +102,43 @@
              </div>
          </div>
       </div>
+      <div class="box-container">
+         <div class="title">
+             <h2>相关产品</h2>
+         </div>
+         <div class="container-list">
+             <productSwiper></productSwiper>
+         </div>
+      </div>
+      <div class="box-container">
+         <div class="title">
+             <h2>最近浏览</h2>
+         </div>
+         <div class="container-list">
+             <productSwiper></productSwiper>
+         </div>
+      </div>
+      <div class="product-btn clearfixed">
+          <a href="#" class="btn-service"><i class="icon icon-service1"></i></a>
+          <a href="javascript:;" class="add-cart" @click="send">加入购物车</a>
+          <a href="/" class="order-now">立即购买</a>
+      </div>
   </div>
 </template>
 
 <script>
+import Bus from '../../bus.js'
 import scroll from '../../components/scroll/scroll'
+import productSwiper from '../../components/product-swiper/product-swiper'
+import selectSpecification from '../../components/selectSpecification/selectSpecification'
+import num from '../../components/num/num'
 export default {
     data(){
         return{
             // "produceIndex":0,
+            "showProduct":false,
+            "changeIcon":false,
+            "buyNum":"",
             "imgList":[
                 {
                     "imgLink":"../../../static/img/item.png",
@@ -125,7 +171,12 @@ export default {
             //     {
             //         "name":"产品保养"
             //     }
-            // ]
+            // ],
+            "specification":[
+                {"name":"中片刀"},
+                {"name":"大片刀"},
+                {"name":"小片刀"}
+            ]
 
         }
     },
@@ -134,9 +185,31 @@ export default {
         //     let that = this;
         //     this.produceIndex = index;
         // }
+        productSelect(){
+            let me = this;
+            me.showProduct = true;
+        },
+        hideProduct(){
+            let me = this;
+            me.showProduct = false;
+        },
+        collect(){
+            this.changeIcon = !this.changeIcon;
+        },
+        get(msg){
+            this.buyNum = msg
+            console.info("获取数据",this.buyNum)
+        },
+        send(){
+            Bus.$emit('txt1',this.buyNum);
+            console.log("将要发送的数据",this.buyNum)
+        }
     },
     components:{
-        scroll
+        scroll,
+        productSwiper,
+        selectSpecification,
+        num
     }
 }
 $(function(){
@@ -156,5 +229,8 @@ $(function(){
 </script>
 
 <style lang="less" scoped>
+body{
+    padding-bottom:41px;
+}
 @import 'pdp.less';
 </style>

@@ -58,20 +58,12 @@
               </li>
           </ul>
       </div>
-      <div class="box-container">
-         <div class="title">
-             <h2>相关产品</h2>
-         </div>
-         <div class="container-list">
-             <productSwiper></productSwiper>
-         </div>
-      </div>
+
   </div>
 </template>
 
 <script>
 import star from '../../components/star/star'
-import productSwiper from '../../components/product-swiper/product-swiper'
 export default {
     data(){
         return{
@@ -79,8 +71,7 @@ export default {
         }
     },
     components:{
-        star,
-        productSwiper
+        star        
     }
 }
 </script>

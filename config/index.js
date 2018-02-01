@@ -40,7 +40,7 @@ module.exports = {
   build: {
     // Template for index.html
     index: path.resolve(__dirname, './dist/index.html'),
-
+    shop: path.resolve(__dirname, './dist/shop.html'),
     // Paths
     assetsRoot: path.resolve(__dirname, './dist'),
     assetsSubDirectory: 'static',
