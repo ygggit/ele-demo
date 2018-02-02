@@ -2,8 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import axios from 'axios'
-import App from './App'
-import router from './router'
+import shop from './shop.vue'
+
 
 Vue.config.productionTip = false
 // 引入ui
@@ -14,7 +14,7 @@ import 'swiper/dist/css/swiper.min.css';
 import VueLazyload from 'vue-lazyload'
 import $ from 'jquery'
 // 注意要写依赖
-require('!style-loader!css-loader!less-loader!./common/common.less');
+require('!style-loader!css-loader!less-loader!../../common/common.less');
 Vue.use(MuseUI)
 Vue.use(VueAwesomeSwiper)
 Vue.use(VueLazyload, {
@@ -26,8 +26,7 @@ Vue.use(VueLazyload, {
 Vue.prototype.$http = axios
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+  el: '#shop',
+  template: '<shop/>',
+  components: { shop }
 })

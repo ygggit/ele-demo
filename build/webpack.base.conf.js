@@ -4,7 +4,8 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const webpack = require('webpack')
-
+var glob = require('glob');
+var entries = getEntry('./src/page/**/*.js'); // 获得入口js文件
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -13,10 +14,11 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js',
-    shop: './src/shop.js'
-  },
+  // entry: {
+  //   app: './src/page/index/main.js',
+  //   shop: './src/page/shop/shop.js'
+  // },
+  entry:entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -92,4 +94,25 @@ module.exports = {
         $: "jquery"
         })
     ]
+}
+function getEntry(globPath) {
+  var entries = {},
+    basename, tmp, pathname;
+  if (typeof (globPath) != "object") {
+    globPath = [globPath]
+  }
+  globPath.forEach((itemPath) => {
+    glob.sync(itemPath).forEach(function (entry) {
+      basename = path.basename(entry, path.extname(entry));
+      if (entry.split('/').length > 4) {
+        tmp = entry.split('/').splice(-3);
+        pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
+        entries[pathname] = entry;
+      } else {
+        entries[basename] = entry;
+      }
+    });
+  });
+  return entries;
+  console.log(entries)
 }

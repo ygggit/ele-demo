@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import product from "../../components/product/product"
+import product from "../product/product"
 // 注意此悬顶效果在app上可能会出现抖动问题，请参考bug.text
 export default {
     data(){

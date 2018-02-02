@@ -128,10 +128,10 @@
 
 <script>
 import Bus from '../../bus.js'
-import scroll from '../../components/scroll/scroll'
-import productSwiper from '../../components/product-swiper/product-swiper'
-import selectSpecification from '../../components/selectSpecification/selectSpecification'
-import num from '../../components/num/num'
+import scroll from '../scroll/scroll'
+import productSwiper from '../product-swiper/product-swiper'
+import selectSpecification from '../selectSpecification/selectSpecification'
+import num from '../num/num'
 export default {
     data(){
         return{

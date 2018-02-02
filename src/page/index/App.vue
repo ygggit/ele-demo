@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <a href="../shop.html">跳转页面</a>
+      <!-- <a href="../shop.html">跳转页面</a> -->
      <v-header></v-header>
      <div class="zwilling-container">
          <keep-alive>
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import VHeader from './components/header/header'
-import VFooter from './components/footer/footer'
-import BackTop from './components/back-top/back-top'
+import VHeader from '../../components/header/header'
+import VFooter from '../../components/footer/footer'
+import BackTop from '../../components/back-top/back-top'
 export default {
   name: 'app',
   data(){

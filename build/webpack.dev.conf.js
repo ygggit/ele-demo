@@ -11,7 +11,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const SpritesmithPlugin = require('webpack-spritesmith')
 const express = require('express')
-
+const glob = require('glob')
 
 // var history = require('connect-history-api-fallback');
 // var connect = require('connect');
@@ -61,16 +61,18 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'shop.html',
-      template: 'shop.html',
-      inject: true
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'index/index.html',
+    //   template: 'index/index.html',
+    //   inject: true,
+    //   // chunks: ['app']
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'shop/shop.html',
+    //   template: 'shop/shop.html',
+    //   inject: true,
+    //   // chunks: ['shop']
+    // }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -121,3 +123,44 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
+function getEntry(globPath) {
+  var entries = {},
+    basename, tmp, pathname;
+  if (typeof (globPath) != "object") {
+    globPath = [globPath]
+  }
+  globPath.forEach((itemPath) => {
+    glob.sync(itemPath).forEach(function (entry) {
+      basename = path.basename(entry, path.extname(entry));
+      if (entry.split('/').length > 4) {
+        tmp = entry.split('/').splice(-3);
+        pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
+        entries[pathname] = entry;
+      } else {
+        entries[basename] = entry;
+      }
+    });
+  });
+  return entries;
+}
+
+var pages = getEntry(['./src/page/*.html','./src/page/**/*.html']);
+
+for (var pathname in pages) {
+  // 配置生成的html文件，定义路径等
+  var conf = {
+    filename: pathname + '.html',
+    template: pages[pathname],   // 模板路径
+    inject: true,              // js插入位置
+    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+    chunksSortMode: 'dependency'
+
+  };
+
+  if (pathname in devWebpackConfig.entry) {
+    conf.chunks = ['manifest', 'vendor', pathname];
+    conf.hash = true;
+  }
+
+  devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
+}

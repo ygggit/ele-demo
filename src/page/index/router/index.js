@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '../components/home/home'
-import plp from '../page/plp/plp'
-import pdp from '../page/pdp/pdp'
-import productIntroduction from '../components/product-introduction/product-introduction'
-import userEvaluation from '../components/user-evaluation/user-evaluation'
-import productMaintenance from '../components/product-maintenance/product-maintenance'
+import home from '../../../components/home/home'
+import plp from '../../../components/plp/plp'
+import pdp from '../../../components/pdp/pdp'
+import productIntroduction from '../../../components/product-introduction/product-introduction'
+import userEvaluation from '../../../components/user-evaluation/user-evaluation'
+import productMaintenance from '../../../components/product-maintenance/product-maintenance'
 Vue.use(Router)
 
 export default new Router({
