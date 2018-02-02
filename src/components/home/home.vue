@@ -175,8 +175,8 @@
 </template>
 
 <script>
-import scroll from '../../components/scroll/scroll'
-import productSwiper from '../../components/product-swiper/product-swiper'
+import scroll from '../scroll/scroll'
+import productSwiper from '../product-swiper/product-swiper'
 import {swiper,swiperSlide} from 'vue-awesome-swiper'
 export default {
     data(){
@@ -228,5 +228,5 @@ export default {
 </script>
 
 <style lang="less">
-@import 'index.less';
+@import 'home.less';
 </style>

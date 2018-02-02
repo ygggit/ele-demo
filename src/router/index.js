@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '../page/index/index'
+import home from '../components/home/home'
 import plp from '../page/plp/plp'
 import pdp from '../page/pdp/pdp'
 import productIntroduction from '../components/product-introduction/product-introduction'
@@ -13,8 +13,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: index
+      name: 'home',
+      component: home
     },
     {
       path: '/plp',

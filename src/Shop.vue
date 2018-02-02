@@ -1,6 +1,6 @@
 <template>
   <div id="shop">
-<p>我是shop页面</p>
+      <p>我是shop页面</p>
   </div>
 </template>
 
