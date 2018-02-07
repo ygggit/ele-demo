@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <!-- <a href="../shop.html">跳转页面</a> -->
+      <a href="/shop.html">跳转</a>
      <v-header></v-header>
      <div class="zwilling-container">
          <keep-alive>

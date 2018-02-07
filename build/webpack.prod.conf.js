@@ -167,6 +167,7 @@ if (config.build.bundleAnalyzerReport) {
 }
 
 module.exports = webpackConfig
+
 function getEntry(globPath) {
   var entries = {},
     basename, tmp, pathname;
@@ -187,7 +188,8 @@ function getEntry(globPath) {
   });
   return entries;
 }
-var pages = getEntry('./src/page/**/*.html');
+
+var pages = getEntry(['./src/page/*.html','./src/page/**/*.html']);
 
 for (var pathname in pages) {
   // 配置生成的html文件，定义路径等

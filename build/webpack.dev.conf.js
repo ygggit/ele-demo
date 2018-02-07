@@ -1,8 +1,8 @@
 'use strict'
-const utils = require('./utils')
-const webpack = require('webpack')
 const config = require('../config')
+const webpack = require('webpack')
 const merge = require('webpack-merge')
+const utils = require('./utils')
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -11,7 +11,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const SpritesmithPlugin = require('webpack-spritesmith')
 const express = require('express')
-const glob = require('glob')
+// var glob = require('glob')
 
 // var history = require('connect-history-api-fallback');
 // var connect = require('connect');
@@ -67,12 +67,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   inject: true,
     //   // chunks: ['app']
     // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'shop/shop.html',
-    //   template: 'shop/shop.html',
-    //   inject: true,
-    //   // chunks: ['shop']
-    // }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -87,11 +81,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           glob: '*.png'
       },
       target: {
-          image: path.resolve(__dirname, 'sprites/sprite.png'),
-          css: path.resolve(__dirname, 'sprites/sprite.less')
+          image: path.resolve(__dirname, '../static/sprites/sprite.png'),
+          css: path.resolve(__dirname, '../static/sprites/sprite.less')
       },
       apiOptions: {
-          cssImageRef: "../../build/sprites/sprite.png"
+          cssImageRef: "../../static/sprites/sprite.png"
       }
   })
 
@@ -123,44 +117,63 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
-function getEntry(globPath) {
-  var entries = {},
-    basename, tmp, pathname;
-  if (typeof (globPath) != "object") {
-    globPath = [globPath]
-  }
-  globPath.forEach((itemPath) => {
-    glob.sync(itemPath).forEach(function (entry) {
-      basename = path.basename(entry, path.extname(entry));
-      if (entry.split('/').length > 4) {
-        tmp = entry.split('/').splice(-3);
-        pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
-        entries[pathname] = entry;
-      } else {
-        entries[basename] = entry;
-      }
-    });
-  });
-  return entries;
-}
 
-var pages = getEntry(['./src/page/*.html','./src/page/**/*.html']);
-
-for (var pathname in pages) {
+var pages = utils.getEntries('./src/page/**/*.html')
+for(var page in pages) {
   // 配置生成的html文件，定义路径等
   var conf = {
-    filename: pathname + '.html',
-    template: pages[pathname],   // 模板路径
-    inject: true,              // js插入位置
-    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    chunksSortMode: 'dependency'
+    filename: page + '.html',
+    template: pages[page], //模板路径
+    inject: true,
+    // excludeChunks 允许跳过某些chunks, 而chunks告诉插件要引用entry里面的哪几个入口
+    // 如何更好的理解这块呢？举个例子：比如本demo中包含两个模块（index和about），最好的当然是各个模块引入自己所需的js，
+    // 而不是每个页面都引入所有的js，你可以把下面这个excludeChunks去掉，然后npm run build，然后看编译出来的index.html和about.html就知道了
+    // filter：将数据过滤，然后返回符合要求的数据，Object.keys是获取JSON对象中的每个key
+    excludeChunks: Object.keys(pages).filter(item => {
+      return (item != page)
+    })
 
-  };
-
-  if (pathname in devWebpackConfig.entry) {
-    conf.chunks = ['manifest', 'vendor', pathname];
-    conf.hash = true;
   }
-
-  devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
+  // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
+  devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
 }
+// function getEntry(globPath) {
+//   var entries = {},
+//     basename, tmp, pathname;
+//   if (typeof (globPath) != "object") {
+//     globPath = [globPath]
+//   }
+//   globPath.forEach((itemPath) => {
+//     glob.sync(itemPath).forEach(function (entry) {
+//       basename = path.basename(entry, path.extname(entry));
+//       if (entry.split('/').length > 4) {
+//         tmp = entry.split('/').splice(-3);
+//         pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
+//         entries[pathname] = entry;
+//       } else {
+//         entries[basename] = entry;
+//       }
+//     });
+//   });
+//   return entries;
+// }
+// var pages = getEntry('./src/page/**/*.html');
+// for (var pathname in pages) {
+//   // 配置生成的html文件，定义路径等
+//   var conf = {
+//     filename: pathname + '.html',
+//     template: pages[pathname],   // 模板路径
+//     inject: true,              // js插入位置
+//     chunksSortMode: 'dependency',
+//     // chunks: [pathname]
+//     // excludeChunks: Object.keys(pages).filter(item => {
+//     //   return (item != page)
+//     // })
+//
+//   };
+//   if (pathname in devWebpackConfig.entry) {
+//     // conf.chunks = ['manifest', 'vendor', pathname];
+//     conf.hash = true;
+//   }
+//   devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
+// }

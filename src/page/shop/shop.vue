@@ -1,5 +1,5 @@
 <template>
-  <div id="shop">
+  <div id="app">
       <p>我是shop页面</p>
   </div>
 </template>

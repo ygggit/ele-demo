@@ -11,23 +11,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"水果刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"中片刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"多用刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"热销组合"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -39,23 +39,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"平底锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"炖锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"锅具配件"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"锅具套餐"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -67,19 +67,19 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"厨师机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"料理机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"搅拌机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -91,23 +91,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"炊具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"西餐具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"玻璃器皿"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"美甲产品"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -125,23 +125,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"水果刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"中片刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"多用刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"热销组合"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -153,23 +153,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"平底锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"炖锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"锅具配件"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"锅具套餐"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -181,19 +181,19 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"厨师机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"料理机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"搅拌机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -205,23 +205,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"炊具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"西餐具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"玻璃器皿"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"美甲产品"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -239,23 +239,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"水果刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"中片刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"多用刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"热销组合"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -267,23 +267,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"平底锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"炖锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"锅具配件"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"锅具套餐"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -295,19 +295,19 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"厨师机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"料理机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"搅拌机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -319,23 +319,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"炊具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"西餐具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"玻璃器皿"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"美甲产品"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -353,23 +353,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"水果刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"中片刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"多用刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"热销组合"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -381,23 +381,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"平底锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"炖锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"锅具配件"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"锅具套餐"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -409,19 +409,19 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"厨师机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"料理机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"搅拌机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -433,23 +433,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"炊具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"西餐具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"玻璃器皿"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"美甲产品"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -467,23 +467,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"水果刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"中片刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"多用刀"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"热销组合"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -495,23 +495,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"平底锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"炖锅"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"锅具配件"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"锅具套餐"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -523,19 +523,19 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"厨师机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"料理机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"搅拌机"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]
@@ -547,23 +547,23 @@
                     "isSubShow" :false,
                     "classification":[
                         {
-                            "calssificateUrl":"static/header/menu-scd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-scd@2x.png",
                             "classificateName":"炊具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zpd@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zpd@2x.png",
                             "classificateName":"西餐具"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-dy@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-dy@2x.png",
                             "classificateName":"玻璃器皿"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-zuhe@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-zuhe@2x.png",
                             "classificateName":"美甲产品"
                         },
                         {
-                            "calssificateUrl":"static/header/menu-all@2x.png",
+                            "calssificateUrl":"../../../static/header/menu-all@2x.png",
                             "classificateName":"查看全部"
                         }
                     ]

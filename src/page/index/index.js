@@ -3,18 +3,18 @@
 import Vue from 'vue'
 import axios from 'axios'
 import App from './App'
-import router from './router'
-
-Vue.config.productionTip = false
 // 引入ui
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.min.css';
-import VueLazyload from 'vue-lazyload'
 import $ from 'jquery'
-// 注意要写依赖
+import VueLazyload from 'vue-lazyload'
 require('!style-loader!css-loader!less-loader!../../common/common.less');
+import router from './router'
+
+Vue.config.productionTip = false
+// 注意要写依赖
 Vue.use(MuseUI)
 Vue.use(VueAwesomeSwiper)
 Vue.use(VueLazyload, {
