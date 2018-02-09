@@ -1,40 +1,42 @@
 <template lang="html">
   <div class="num-wrapper">
       <span @click="reduce"><i class="icon icon-dis-subtract"></i></span>
-      <input type="text" name="" v-model="count" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+      <input type="text" name="" v-model="countValue" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
       <span @click="add"><i class="icon icon-add"></i></span>
   </div>
 </template>
 
 <script>
 export default {
+    props:['count'],
     data(){
         return{
             type:Number,
-            count:1
+            "countValue":this.count
         }
     },
     methods:{
         reduce(){
             let count;
-            if(!this.count || this.count == 1){
-                this.$set(this,'count', 1)
+            if(!this.countValue || this.countValue == 1){
+                this.$set(this,'countValue', 1)
             }else{
-                this.count--;
+                this.countValue--;
             }
         },
         add(){
-            if(!this.count){
-                this.$set(this,'count', 1)
+            if(!this.countValue){
+                this.$set(this,'countValue', 1)
             }else{
-                this.count++;
+                this.countValue++;
             }
         }
     },
     watch:{
-        count(){
-            this.$emit('buyNumber',this.count);
-            console.info(this.count)
+        count(val){
+            this.countValue = val
+            this.$emit('buyNumber',this.countValue);
+            console.info(this.countValue)
         }
     }
 }

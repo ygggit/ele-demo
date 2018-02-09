@@ -600,7 +600,7 @@
             "tag":"新品",
             "productBrand":"ZWILLING",
             "productName":"中片刀砍骨刀菜刀多用刀不锈钢刀具组合刀具组刀具组合组合组合",
-            "nowPrice":"￥1,388.00",
+            "nowPrice":"￥1,488.00",
             "oldPrice":"￥1,888.00"
         },
         {
@@ -651,5 +651,84 @@
             "nowPrice":"￥1,388.00",
             "oldPrice":"￥1,888.00"
         }
-    ]
+    ],
+    "shopCartList":{
+            "status":1,
+            "result":{
+                "totalMoney":22000,
+                "shopList":[
+                    {
+                        "productImage":"../static/img/item.png",
+                        "productId":"600100002115",
+                        "commodityBrand":"ZWILLING",
+                        "commodityName":"中片刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
+                        "commoditySpecifications":"中片刀",
+                        "newPrice":"1,388.00",
+                        "oldPrice":"2,088.00",
+                        "buyQuantity":2,
+                        "residualQuantity":100,
+                        "parts":[
+                            {
+                                "partsImage":"",
+                                "partsId":"10001",
+                                "partsName":"赠品中片刀砍骨刀菜刀"
+                            }
+                        ]
+                    },
+                    {
+                        "productImage":"../static/img/item.png",
+                        "productId":"600100002116",
+                        "commodityBrand":"ZWILLING",
+                        "commodityName":"2大片刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
+                        "commoditySpecifications":"大片刀",
+                        "newPrice":"1,588.00",
+                        "oldPrice":"2,288.00",
+                        "buyQuantity":3,
+                        "residualQuantity":20,
+                        "parts":[
+                            {
+                                "partsImage":"",
+                                "partsId":"20001",
+                                "partsName":"赠品大片刀砍骨刀菜刀"
+                            }
+                        ]
+                    },
+                    {
+                        "productImage":"../static/img/item.png",
+                        "productId":"600100002117",
+                        "commodityBrand":"ZWILLING",
+                        "commodityName":"3小片刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
+                        "commoditySpecifications":"小片刀",
+                        "newPrice":"988.00",
+                        "oldPrice":"1,288.00",
+                        "buyQuantity":2,
+                        "residualQuantity":20,
+                        "parts":[
+                            {
+                                "partsImage":"",
+                                "partsId":"30001",
+                                "partsName":"赠品小片刀砍骨刀菜刀"
+                            }
+                        ]
+                    },{
+                        "productImage":"../static/img/item.png",
+                        "productId":"600100002118",
+                        "commodityBrand":"ZWILLING",
+                        "commodityName":"4菜刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
+                        "commoditySpecifications":"小片刀",
+                        "newPrice":"1988.00",
+                        "oldPrice":"2,288.00",
+                        "buyQuantity":1,
+                        "residualQuantity":1,
+                        "parts":[
+                            {
+                                "partsImage":"",
+                                "partsId":"40001",
+                                "partsName":"赠品小片刀砍骨刀菜刀"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
 }

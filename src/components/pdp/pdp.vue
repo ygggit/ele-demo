@@ -121,7 +121,7 @@
       <div class="product-btn clearfixed">
           <a href="#" class="btn-service"><i class="icon icon-service1"></i></a>
           <a href="javascript:;" class="add-cart" @click="send">加入购物车</a>
-          <a href="/" class="order-now">立即购买</a>
+          <a href="/shop.html" class="order-now">立即购买</a>
       </div>
   </div>
 </template>
@@ -138,6 +138,7 @@ export default {
             // "produceIndex":0,
             "showProduct":false,
             "changeIcon":false,
+            "buyDefaultNum":"1",
             "buyNum":"",
             "imgList":[
                 {
@@ -201,6 +202,9 @@ export default {
             console.info("获取数据",this.buyNum)
         },
         send(){
+            if(this.buyNum == buyDefaultNum){
+                this.buyNum++
+            }
             Bus.$emit('txt1',this.buyNum);
             console.log("将要发送的数据",this.buyNum)
         }

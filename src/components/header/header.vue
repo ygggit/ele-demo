@@ -65,7 +65,7 @@
                      <a href="#"><i class="icon icon-search"></i></a>
                  </li>
                  <li>
-                     <a href="../../../shop.html">
+                     <a href="/shop.html">
                          <i class="icon icon-shopping"></i>
                          <em>{{cartNum}}</em>
                      </a>
@@ -120,7 +120,7 @@ export default {
       // });
       this.$http.get('../../../static/data.json')
       .then(response => {
-          console.info(response.data.list)
+          // console.info(response.data.list)
           this.list = response.data.list
           // console.log(typeof(response.data));
           // console.log(JSON.parse(response.data));

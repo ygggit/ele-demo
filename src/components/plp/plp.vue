@@ -52,7 +52,7 @@ export default {
         },
     },
     destroyed () {
-        console.log('离开')
+        // console.log('离开')
       window.removeEventListener('scroll', this.handleScroll)
     },
     components:{
