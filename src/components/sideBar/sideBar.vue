@@ -1,7 +1,9 @@
 <template lang="html">
+    <!-- 侧边栏 -->
     <div class="nav-wrapper">
         <ul class="nav-content">
             <li v-for="(val,index) in list" :key="index" :class="{'active':index===activeIndex}" @click="changeMenu(index)">
+                <!-- 一级菜单 -->
                 <a :href="val.menuUrl">
                     <div class="">
                         <p class="chineseName">{{val.ChineseName}}</p>
@@ -9,6 +11,7 @@
                         <i class="icon icon-arrow-left" v-if="val.menuSub.length>0"></i>
                     </div>
                 </a>
+                <!-- 二级菜单 -->
                 <div class="sub-menu" v-show="index===activeIndex">
                     <ul>
                         <li v-for="(menuSubVal,selfIndex) in val.menuSub" :key="selfIndex"  :class="{'is-open':menuSubVal.isSubShow && selfIndex === secondActiveIndex}">
@@ -20,6 +23,7 @@
                                 </p>
                                 <i class="icon" :class=" menuSubVal.isSubShow && selfIndex === secondActiveIndex ? 'icon-hide' : 'icon-open'"></i>
                             </a>
+                            <!-- 三级菜单 -->
                             <transition name="fade">
                                 <ul class="clearfixed">
                                     <li v-for="(classificationVal,index) in menuSubVal.classification" :key="index" @click="hideSide(open)">
@@ -71,6 +75,8 @@ export default {
             Bus.$emit('txt',this.open);
         },
         changeMenu(index){
+            console.log("测试index",index)
+            console.log("测试点击index",this.activeIndex)
             this.activeIndex = index
         },
         toggleShowMenu(index,selfIndex){

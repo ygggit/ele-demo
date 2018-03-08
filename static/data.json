@@ -663,8 +663,8 @@
                         "commodityBrand":"ZWILLING",
                         "commodityName":"中片刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
                         "commoditySpecifications":"中片刀",
-                        "newPrice":"1,388.00",
-                        "oldPrice":"2,088.00",
+                        "newPrice":"1388.00",
+                        "oldPrice":"2088.00",
                         "buyQuantity":2,
                         "residualQuantity":100,
                         "parts":[
@@ -681,8 +681,8 @@
                         "commodityBrand":"ZWILLING",
                         "commodityName":"2大片刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
                         "commoditySpecifications":"大片刀",
-                        "newPrice":"1,588.00",
-                        "oldPrice":"2,288.00",
+                        "newPrice":"1588.00",
+                        "oldPrice":"2288.00",
                         "buyQuantity":3,
                         "residualQuantity":20,
                         "parts":[
@@ -700,7 +700,7 @@
                         "commodityName":"3小片刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
                         "commoditySpecifications":"小片刀",
                         "newPrice":"988.00",
-                        "oldPrice":"1,288.00",
+                        "oldPrice":"1288.00",
                         "buyQuantity":2,
                         "residualQuantity":20,
                         "parts":[
@@ -717,7 +717,7 @@
                         "commodityName":"4菜刀砍骨刀菜刀多用刀不锈钢刀具组合组省略省略省略省略省略省略省略省略省略...",
                         "commoditySpecifications":"小片刀",
                         "newPrice":"1988.00",
-                        "oldPrice":"2,288.00",
+                        "oldPrice":"2288.00",
                         "buyQuantity":1,
                         "residualQuantity":1,
                         "parts":[

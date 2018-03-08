@@ -88,9 +88,11 @@ export default {
         }
     },
     methods:{
+        // 编辑
         editInfo(index){
             this.noEdit= !this.noEdit
         },
+        // 选择单个商品
         checkcommodity(val){
             let _this = this;
             if(typeof val.checked == 'undefined'){

@@ -12,7 +12,7 @@ export default {
     data(){
         return{
             type:Number,
-            "countValue":this.count
+            countValue:this.count
         }
     },
     methods:{
@@ -33,10 +33,9 @@ export default {
         }
     },
     watch:{
-        count(val){
+        countValue(val){
             this.countValue = val
             this.$emit('buyNumber',this.countValue);
-            console.info(this.countValue)
         }
     }
 }

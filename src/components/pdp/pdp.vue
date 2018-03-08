@@ -138,8 +138,8 @@ export default {
             // "produceIndex":0,
             "showProduct":false,
             "changeIcon":false,
-            "buyDefaultNum":"1",
-            "buyNum":"",
+            "buyDefaultNum":1,
+            "buyNum":0,
             "imgList":[
                 {
                     "imgLink":"../../../static/img/item.png",
@@ -202,7 +202,7 @@ export default {
             console.info("获取数据",this.buyNum)
         },
         send(){
-            if(this.buyNum == buyDefaultNum){
+            if(this.buyNum == this.buyDefaultNum){
                 this.buyNum++
             }
             Bus.$emit('txt1',this.buyNum);
