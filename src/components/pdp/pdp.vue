@@ -202,9 +202,11 @@ export default {
             console.info("获取数据",this.buyNum)
         },
         send(){
-            if(this.buyNum == this.buyDefaultNum){
+            // let me = this;
+            // me.showProduct = true;
+            // if(this.buyNum == this.buyDefaultNum){
                 this.buyNum++
-            }
+            // }
             Bus.$emit('txt1',this.buyNum);
             console.log("将要发送的数据",this.buyNum)
         }

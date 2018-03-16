@@ -35,7 +35,7 @@
                                   <span><i class="icon" :class=" val.checked ? 'icon-checkbox-pressed':'icon-checkbox-default'" @click="checkcommodity(val)"></i></span>
                                   <!-- 编辑 -->
                                   <span class="operation" v-show="!val.isEdit">
-                                      <i class="icon icon-trash"></i>
+                                      <i class="icon icon-trash" @click="delConfirme(val)"></i>
                                       <i class="icon icon-like"></i>
                                       <i class="icon icon-edit" @click="editInfo(index)"></i>
                                   </span>
@@ -93,7 +93,30 @@
                   <i class="icon" :class=" checkAllFlag ? 'icon-checkbox-pressed':'icon-checkbox-default'" @child-msg="checkedAll(checkAllFlag)"></i>全选</span>
                   <span class="totalMoney">总计：{{totalMoney}}</span>
           </div>
-          <a href="JavaScript:;" class="settlement">立即结算</a></div>
+          <a href="JavaScript:;" class="settlement">立即结算</a>
+      </div>
+      <!-- 弹层  -->
+      <div class="dialog" v-show="delFlag">
+          <div class="md-overlay"  @click="delFlag=false"></div>
+          <div class="md-modal">
+              <div class="md-modal-inner">
+                  <div class="md-top">
+                      <p>提示</p>
+                  </div>
+                  <div class="md-content">
+                      <div class="confirm-tips">
+                          <p>确定删除这件商品吗?</p>
+                      </div>
+                  </div>
+                  <div class="md-btn">
+                      <a href="#" class="btn btn-cancel" @click="delFlag=false">取消</a>
+                      <a href="#" class="btn btn-success" @click="delProduct()">确认</a>
+                  </div>
+                  <i class="icon icon-close" @click="delFlag=false"></i>
+              </div>
+          </div>
+
+      </div>
 
   </div>
 </template>
@@ -106,11 +129,12 @@ import dropDown from '../../components/dropdownBox/dropdownBox'
 export default {
   data(){
       return{
-          "noEdit":true,
           "shopProductList":[],
           "checkAllFlag":false,
           "totalMoney":0,
           "editIndex":0,
+          "delFlag":false,
+          "curProduct":'',
           "specifications":[
               {"name":"1中片刀中片刀"},
               {"name":"2中片刀中片刀"},
@@ -126,6 +150,7 @@ export default {
       // 请求api
       this.$http.get('../../../static/data.json').then( res => {
           var  data=res.data.shopCartList.result.shopList;
+          console.log(data)
           data.forEach(function(item){
               item.isEdit=false;
           })
@@ -134,22 +159,20 @@ export default {
       });
   },
   methods:{
-
     // 编辑
       editInfo(index){
-          console.log("测试index1",index)
-          console.log("测试点击index1",this.editIndex)
           this.shopProductList[index].isEdit=true;
       },
       // 点击完成
       finished(index){
           this.shopProductList[index].isEdit=false;
       },
-      // 选择单个商品
+      // 单选
       checkcommodity(val){
           let _this = this;
+          // 判断是否存在checked属性
           if(typeof val.checked == 'undefined'){
-              // 注册监听变量
+              // 局部注册监听变量 注册一个属性checked 默认为true
               this.$set(val,"checked",true);
           }else{
               val.checked = !val.checked;
@@ -170,12 +193,14 @@ export default {
          })
          this.calcTotalPrice()
      },
+     // 编辑 选择商品数量
      chageProductCount(item,state){
          if(state&&item.buyQuantity<5){
             item.buyQuantity++
-        }else if(!state&&item.buyQuantity>0){
+        }else if(!state&&item.buyQuantity>1){
             item.buyQuantity--
         }
+         this.calcTotalPrice()
      },
       // 全选
       checkedAll(){
@@ -205,10 +230,18 @@ export default {
              }
          })
      },
-     // // 选择数量
-     // changeCount(msg){
-     //     this.shopProductList[0].buyQuantity = msg
-     // }
+     // 删除
+     delConfirme(val){
+         this.delFlag = true;
+         this.curProduct = val;
+     },
+     delProduct(){
+         var proIndex = this.shopProductList.indexOf(this.curProduct);
+         this.shopProductList.splice(proIndex,1);
+         // 只是模拟删除
+         this.delFlag=false
+     }
+
   },
   components: {
       // shoppingList,
@@ -220,6 +253,77 @@ export default {
 }
 </script>
 <style lang="less">
+.dialog{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    .md-overlay{
+        background-color: rgba(0,0,0,.6);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        overflow-x: hidden;
+        overflow-y: auto;
+        min-width: 320px;
+    }
+    .md-modal{
+        position: relative;
+        background: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 240px;
+        border-radius: 2.5px;
+        z-index: 100;
+        .md-modal-inner{
+            .md-top{
+                font-size: 16px;
+                color: #333;
+                line-height: 44px;
+                height: 44px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #999;
+            }
+            .md-content{
+                padding:30px 20px;
+                text-align: center;
+
+            }
+            .md-btn{
+                font-size:0;
+                a{
+                    width: 50%;
+                    height: 44px;
+                    line-height: 43px;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                    border: 0;
+                    border-top: 1px solid #999;
+                    position: relative;
+                    border-radius: 0;
+                    font-size: 14px;
+                    &.btn-cancel{
+                        border-right: 1px solid #999;
+                    }
+                }
+            }
+            i{
+                position: absolute;
+                top: 15px;
+                right: 10px;
+            }
+        }
+    }
+}
+
+
 .num-wrapper{
     background: #fff;
     border: 1px solid #e1e1e1;
