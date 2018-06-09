@@ -600,7 +600,11 @@
             "tag":"新品",
             "productBrand":"ZWILLING",
             "productName":"中片刀砍骨刀菜刀多用刀不锈钢刀具组合刀具组刀具组合组合组合",
+<<<<<<< HEAD
             "nowPrice":"￥1,488.00",
+=======
+            "nowPrice":"￥1,388.00",
+>>>>>>> 0fb34b072571d0ef1e19c989cc206dfda99ba38c
             "oldPrice":"￥1,888.00"
         },
         {
@@ -651,6 +655,7 @@
             "nowPrice":"￥1,388.00",
             "oldPrice":"￥1,888.00"
         }
+<<<<<<< HEAD
     ],
     "shopCartList":{
             "status":1,
@@ -731,4 +736,7 @@
                 ]
             }
         }
+=======
+    ]
+>>>>>>> 0fb34b072571d0ef1e19c989cc206dfda99ba38c
 }
