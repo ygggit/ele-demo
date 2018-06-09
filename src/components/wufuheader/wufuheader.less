@@ -1,0 +1,165 @@
+.header{
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	.header-wrapper{
+		width: 100%;
+		position: relative;
+		.header-container{
+			max-width: 1200px;
+			margin:0 auto;
+			height: 70px;
+			.logo{
+				margin-top: 8px;
+				background:url(../../../static/wufuheader/logo.png) no-repeat;
+				width: 347px;
+				height:53px;
+			}
+			.nav{
+				float: right;
+				// position: relative;
+				ul{
+					display: inline-block;
+					font-size:0;
+					li{
+						display: inline-block;
+						height: 70px;
+						>a{
+							font-size:16px;
+							color: #fff;
+							padding:0 24px;
+							line-height: 70px;
+							cursor: pointer;
+						}
+						.sub-menu{
+							display: none;
+							position: absolute;
+							width: 100%;
+							left: 0;
+							border: 0;
+							border-radius: 0;
+							padding: 0;
+							background: #fff;
+							z-index: 100;
+							background: #fff;
+							top: 71px;
+							.sub-menu-box{
+								position: relative;
+								left:50%;
+								margin-left: -155px;
+								ul{
+									// margin-left: 560px;
+									li{
+										a{
+											color: #333;
+											font-size: 14px;
+										}
+									}
+								}
+							}
+							&.active{
+								display: block;
+							}
+						}
+						&.active{
+							border-bottom:3px solid #fff;
+							box-sizing: border-box;
+						}
+						&.hover{
+							color: #333;
+						}
+					}
+				}
+				.login-box{
+					display: inline-block;
+					background:url(../../../static/wufuheader/login-bg.png) no-repeat;
+					width:51px;
+					height:53px;
+					background-size:51px 53px;
+					vertical-align: middle;
+					margin-left: 56px;
+					a{
+						font-size:12px;
+						width: 12px;
+						padding: 0px 2px 0px 7px;
+						display: inline-block;
+						margin-top: 9px;
+						color: #fff;
+						&.login{
+							color: #a20d0d;
+						}
+					}
+				}
+			}
+		}
+		&:hover{
+			// background: #fff;
+			// color: #333;
+		}
+	}
+	&.headerFixed,&:hover{
+		position: fixed;
+		background: #fff;
+		color:#333;
+		.header-wrapper{
+			border-bottom:1px solid #d9d9d9;
+			.header-container{
+				.logo{
+					background:url(../../../static/wufuheader/logo-active.png) no-repeat;
+				}
+				.nav{
+					ul{
+						li{
+							>a{
+								color: #333;
+							}
+							&.active{
+								border-bottom:3px solid #333;
+								box-sizing: border-box;
+							}
+						}
+					}
+					.login-box{
+						background:url(../../../static/wufuheader/login-active-bg.png) no-repeat;
+						a{
+							color:#333;
+							&.login{
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width:1200px) {
+	.header{
+		.header-wrapper{
+			.header-container{
+				.logo{
+				}
+				.nav{
+					ul{
+						li{
+							>a{
+								padding:0 16px;
+							}
+							.sub-menu{
+								.sub-menu-box{							
+									margin-left:-80px;
+								}
+							}
+						}
+					}
+					.login-box{
+						a{
+							&.login{
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

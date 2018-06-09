@@ -1,0 +1,572 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@add-name: 'add';
+@add-x: 204px;
+@add-y: 149px;
+@add-offset-x: -204px;
+@add-offset-y: -149px;
+@add-width: 14px;
+@add-height: 15px;
+@add-total-width: 228px;
+@add-total-height: 188px;
+@add-image: '../../static/sprites/sprite.png';
+@add: 204px 149px -204px -149px 14px 15px 228px 188px '../../static/sprites/sprite.png' 'add';
+@arrow-left-name: 'arrow-left';
+@arrow-left-x: 218px;
+@arrow-left-y: 149px;
+@arrow-left-offset-x: -218px;
+@arrow-left-offset-y: -149px;
+@arrow-left-width: 9px;
+@arrow-left-height: 15px;
+@arrow-left-total-width: 228px;
+@arrow-left-total-height: 188px;
+@arrow-left-image: '../../static/sprites/sprite.png';
+@arrow-left: 218px 149px -218px -149px 9px 15px 228px 188px '../../static/sprites/sprite.png' 'arrow-left';
+@cancel-name: 'cancel';
+@cancel-x: 0px;
+@cancel-y: 164px;
+@cancel-offset-x: 0px;
+@cancel-offset-y: -164px;
+@cancel-width: 24px;
+@cancel-height: 24px;
+@cancel-total-width: 228px;
+@cancel-total-height: 188px;
+@cancel-image: '../../static/sprites/sprite.png';
+@cancel: 0px 164px 0px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'cancel';
+@canting-name: 'canting';
+@canting-x: 0px;
+@canting-y: 116px;
+@canting-offset-x: 0px;
+@canting-offset-y: -116px;
+@canting-width: 48px;
+@canting-height: 48px;
+@canting-total-width: 228px;
+@canting-total-height: 188px;
+@canting-image: '../../static/sprites/sprite.png';
+@canting: 0px 116px 0px -116px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'canting';
+@checkbox-default-name: 'checkbox-default';
+@checkbox-default-x: 204px;
+@checkbox-default-y: 117px;
+@checkbox-default-offset-x: -204px;
+@checkbox-default-offset-y: -117px;
+@checkbox-default-width: 16px;
+@checkbox-default-height: 16px;
+@checkbox-default-total-width: 228px;
+@checkbox-default-total-height: 188px;
+@checkbox-default-image: '../../static/sprites/sprite.png';
+@checkbox-default: 204px 117px -204px -117px 16px 16px 228px 188px '../../static/sprites/sprite.png' 'checkbox-default';
+@checkbox-pressed-name: 'checkbox-pressed';
+@checkbox-pressed-x: 204px;
+@checkbox-pressed-y: 133px;
+@checkbox-pressed-offset-x: -204px;
+@checkbox-pressed-offset-y: -133px;
+@checkbox-pressed-width: 16px;
+@checkbox-pressed-height: 16px;
+@checkbox-pressed-total-width: 228px;
+@checkbox-pressed-total-height: 188px;
+@checkbox-pressed-image: '../../static/sprites/sprite.png';
+@checkbox-pressed: 204px 133px -204px -133px 16px 16px 228px 188px '../../static/sprites/sprite.png' 'checkbox-pressed';
+@close-name: 'close';
+@close-x: 164px;
+@close-y: 144px;
+@close-offset-x: -164px;
+@close-offset-y: -144px;
+@close-width: 14px;
+@close-height: 14px;
+@close-total-width: 228px;
+@close-total-height: 188px;
+@close-image: '../../static/sprites/sprite.png';
+@close: 164px 144px -164px -144px 14px 14px 228px 188px '../../static/sprites/sprite.png' 'close';
+@dis-subtract-name: 'dis-subtract';
+@dis-subtract-x: 214px;
+@dis-subtract-y: 184px;
+@dis-subtract-offset-x: -214px;
+@dis-subtract-offset-y: -184px;
+@dis-subtract-width: 14px;
+@dis-subtract-height: 2px;
+@dis-subtract-total-width: 228px;
+@dis-subtract-total-height: 188px;
+@dis-subtract-image: '../../static/sprites/sprite.png';
+@dis-subtract: 214px 184px -214px -184px 14px 2px 228px 188px '../../static/sprites/sprite.png' 'dis-subtract';
+@down-defalt-name: 'down-defalt';
+@down-defalt-x: 188px;
+@down-defalt-y: 134px;
+@down-defalt-offset-x: -188px;
+@down-defalt-offset-y: -134px;
+@down-defalt-width: 12px;
+@down-defalt-height: 6px;
+@down-defalt-total-width: 228px;
+@down-defalt-total-height: 188px;
+@down-defalt-image: '../../static/sprites/sprite.png';
+@down-defalt: 188px 134px -188px -134px 12px 6px 228px 188px '../../static/sprites/sprite.png' 'down-defalt';
+@edit-name: 'edit';
+@edit-x: 204px;
+@edit-y: 164px;
+@edit-offset-x: -204px;
+@edit-offset-y: -164px;
+@edit-width: 14px;
+@edit-height: 14px;
+@edit-total-width: 228px;
+@edit-total-height: 188px;
+@edit-image: '../../static/sprites/sprite.png';
+@edit: 204px 164px -204px -164px 14px 14px 228px 188px '../../static/sprites/sprite.png' 'edit';
+@flagship-name: 'flagship';
+@flagship-x: 116px;
+@flagship-y: 0px;
+@flagship-offset-x: -116px;
+@flagship-offset-y: 0px;
+@flagship-width: 48px;
+@flagship-height: 48px;
+@flagship-total-width: 228px;
+@flagship-total-height: 188px;
+@flagship-image: '../../static/sprites/sprite.png';
+@flagship: 116px 0px -116px 0px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'flagship';
+@gifts-name: 'gifts';
+@gifts-x: 116px;
+@gifts-y: 48px;
+@gifts-offset-x: -116px;
+@gifts-offset-y: -48px;
+@gifts-width: 48px;
+@gifts-height: 48px;
+@gifts-total-width: 228px;
+@gifts-total-height: 188px;
+@gifts-image: '../../static/sprites/sprite.png';
+@gifts: 116px 48px -116px -48px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'gifts';
+@half-star-name: 'half-star';
+@half-star-x: 220px;
+@half-star-y: 117px;
+@half-star-offset-x: -220px;
+@half-star-offset-y: -117px;
+@half-star-width: 7px;
+@half-star-height: 12px;
+@half-star-total-width: 228px;
+@half-star-total-height: 188px;
+@half-star-image: '../../static/sprites/sprite.png';
+@half-star: 220px 117px -220px -117px 7px 12px 228px 188px '../../static/sprites/sprite.png' 'half-star';
+@half-star1-name: 'half-star1';
+@half-star1-x: 220px;
+@half-star1-y: 133px;
+@half-star1-offset-x: -220px;
+@half-star1-offset-y: -133px;
+@half-star1-width: 7px;
+@half-star1-height: 12px;
+@half-star1-total-width: 228px;
+@half-star1-total-height: 188px;
+@half-star1-image: '../../static/sprites/sprite.png';
+@half-star1: 220px 133px -220px -133px 7px 12px 228px 188px '../../static/sprites/sprite.png' 'half-star1';
+@hide-name: 'hide';
+@hide-x: 218px;
+@hide-y: 164px;
+@hide-offset-x: -218px;
+@hide-offset-y: -164px;
+@hide-width: 10px;
+@hide-height: 10px;
+@hide-total-width: 228px;
+@hide-total-height: 188px;
+@hide-image: '../../static/sprites/sprite.png';
+@hide: 218px 164px -218px -164px 10px 10px 228px 188px '../../static/sprites/sprite.png' 'hide';
+@house-name: 'house';
+@house-x: 48px;
+@house-y: 116px;
+@house-offset-x: -48px;
+@house-offset-y: -116px;
+@house-width: 48px;
+@house-height: 48px;
+@house-total-width: 228px;
+@house-total-height: 188px;
+@house-image: '../../static/sprites/sprite.png';
+@house: 48px 116px -48px -116px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'house';
+@like-pressed-name: 'like-pressed';
+@like-pressed-x: 204px;
+@like-pressed-y: 83px;
+@like-pressed-offset-x: -204px;
+@like-pressed-offset-y: -83px;
+@like-pressed-width: 19px;
+@like-pressed-height: 17px;
+@like-pressed-total-width: 228px;
+@like-pressed-total-height: 188px;
+@like-pressed-image: '../../static/sprites/sprite.png';
+@like-pressed: 204px 83px -204px -83px 19px 17px 228px 188px '../../static/sprites/sprite.png' 'like-pressed';
+@like-name: 'like';
+@like-x: 204px;
+@like-y: 100px;
+@like-offset-x: -204px;
+@like-offset-y: -100px;
+@like-width: 19px;
+@like-height: 17px;
+@like-total-width: 228px;
+@like-total-height: 188px;
+@like-image: '../../static/sprites/sprite.png';
+@like: 204px 100px -204px -100px 19px 17px 228px 188px '../../static/sprites/sprite.png' 'like';
+@loggend-name: 'loggend';
+@loggend-x: 120px;
+@loggend-y: 164px;
+@loggend-offset-x: -120px;
+@loggend-offset-y: -164px;
+@loggend-width: 24px;
+@loggend-height: 24px;
+@loggend-total-width: 228px;
+@loggend-total-height: 188px;
+@loggend-image: '../../static/sprites/sprite.png';
+@loggend: 120px 164px -120px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'loggend';
+@login-name: 'login';
+@login-x: 144px;
+@login-y: 164px;
+@login-offset-x: -144px;
+@login-offset-y: -164px;
+@login-width: 24px;
+@login-height: 24px;
+@login-total-width: 228px;
+@login-total-height: 188px;
+@login-image: '../../static/sprites/sprite.png';
+@login: 144px 164px -144px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'login';
+@maintain-name: 'maintain';
+@maintain-x: 164px;
+@maintain-y: 40px;
+@maintain-offset-x: -164px;
+@maintain-offset-y: -40px;
+@maintain-width: 40px;
+@maintain-height: 40px;
+@maintain-total-width: 228px;
+@maintain-total-height: 188px;
+@maintain-image: '../../static/sprites/sprite.png';
+@maintain: 164px 40px -164px -40px 40px 40px 228px 188px '../../static/sprites/sprite.png' 'maintain';
+@membership-system-name: 'membership-system';
+@membership-system-x: 164px;
+@membership-system-y: 0px;
+@membership-system-offset-x: -164px;
+@membership-system-offset-y: 0px;
+@membership-system-width: 40px;
+@membership-system-height: 40px;
+@membership-system-total-width: 228px;
+@membership-system-total-height: 188px;
+@membership-system-image: '../../static/sprites/sprite.png';
+@membership-system: 164px 0px -164px 0px 40px 40px 228px 188px '../../static/sprites/sprite.png' 'membership-system';
+@menu-name: 'menu';
+@menu-x: 24px;
+@menu-y: 164px;
+@menu-offset-x: -24px;
+@menu-offset-y: -164px;
+@menu-width: 24px;
+@menu-height: 24px;
+@menu-total-width: 228px;
+@menu-total-height: 188px;
+@menu-image: '../../static/sprites/sprite.png';
+@menu: 24px 164px -24px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'menu';
+@more-name: 'more';
+@more-x: 96px;
+@more-y: 116px;
+@more-offset-x: -96px;
+@more-offset-y: -116px;
+@more-width: 48px;
+@more-height: 48px;
+@more-total-width: 228px;
+@more-total-height: 188px;
+@more-image: '../../static/sprites/sprite.png';
+@more: 96px 116px -96px -116px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'more';
+@my-account-name: 'my-account';
+@my-account-x: 72px;
+@my-account-y: 164px;
+@my-account-offset-x: -72px;
+@my-account-offset-y: -164px;
+@my-account-width: 24px;
+@my-account-height: 24px;
+@my-account-total-width: 228px;
+@my-account-total-height: 188px;
+@my-account-image: '../../static/sprites/sprite.png';
+@my-account: 72px 164px -72px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'my-account';
+@news-more-name: 'news-more';
+@news-more-x: 116px;
+@news-more-y: 96px;
+@news-more-offset-x: -116px;
+@news-more-offset-y: -96px;
+@news-more-width: 10px;
+@news-more-height: 19px;
+@news-more-total-width: 228px;
+@news-more-total-height: 188px;
+@news-more-image: '../../static/sprites/sprite.png';
+@news-more: 116px 96px -116px -96px 10px 19px 228px 188px '../../static/sprites/sprite.png' 'news-more';
+@notice-name: 'notice';
+@notice-x: 204px;
+@notice-y: 24px;
+@notice-offset-x: -204px;
+@notice-offset-y: -24px;
+@notice-width: 21px;
+@notice-height: 22px;
+@notice-total-width: 228px;
+@notice-total-height: 188px;
+@notice-image: '../../static/sprites/sprite.png';
+@notice: 204px 24px -204px -24px 21px 22px 228px 188px '../../static/sprites/sprite.png' 'notice';
+@open-name: 'open';
+@open-x: 204px;
+@open-y: 178px;
+@open-offset-x: -204px;
+@open-offset-y: -178px;
+@open-width: 10px;
+@open-height: 10px;
+@open-total-width: 228px;
+@open-total-height: 188px;
+@open-image: '../../static/sprites/sprite.png';
+@open: 204px 178px -204px -178px 10px 10px 228px 188px '../../static/sprites/sprite.png' 'open';
+@return-top-name: 'return-top';
+@return-top-x: 0px;
+@return-top-y: 0px;
+@return-top-offset-x: 0px;
+@return-top-offset-y: 0px;
+@return-top-width: 68px;
+@return-top-height: 68px;
+@return-top-total-width: 228px;
+@return-top-total-height: 188px;
+@return-top-image: '../../static/sprites/sprite.png';
+@return-top: 0px 0px 0px 0px 68px 68px 228px 188px '../../static/sprites/sprite.png' 'return-top';
+@sale-service-name: 'sale-service';
+@sale-service-x: 164px;
+@sale-service-y: 80px;
+@sale-service-offset-x: -164px;
+@sale-service-offset-y: -80px;
+@sale-service-width: 40px;
+@sale-service-height: 40px;
+@sale-service-total-width: 228px;
+@sale-service-total-height: 188px;
+@sale-service-image: '../../static/sprites/sprite.png';
+@sale-service: 164px 80px -164px -80px 40px 40px 228px 188px '../../static/sprites/sprite.png' 'sale-service';
+@search-name: 'search';
+@search-x: 164px;
+@search-y: 120px;
+@search-offset-x: -164px;
+@search-offset-y: -120px;
+@search-width: 24px;
+@search-height: 24px;
+@search-total-width: 228px;
+@search-total-height: 188px;
+@search-image: '../../static/sprites/sprite.png';
+@search: 164px 120px -164px -120px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'search';
+@service-name: 'service';
+@service-x: 96px;
+@service-y: 164px;
+@service-offset-x: -96px;
+@service-offset-y: -164px;
+@service-width: 24px;
+@service-height: 24px;
+@service-total-width: 228px;
+@service-total-height: 188px;
+@service-image: '../../static/sprites/sprite.png';
+@service: 96px 164px -96px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'service';
+@service1-name: 'service1';
+@service1-x: 204px;
+@service1-y: 46px;
+@service1-offset-x: -204px;
+@service1-offset-y: -46px;
+@service1-width: 19px;
+@service1-height: 19px;
+@service1-total-width: 228px;
+@service1-total-height: 188px;
+@service1-image: '../../static/sprites/sprite.png';
+@service1: 204px 46px -204px -46px 19px 19px 228px 188px '../../static/sprites/sprite.png' 'service1';
+@share-name: 'share';
+@share-x: 204px;
+@share-y: 65px;
+@share-offset-x: -204px;
+@share-offset-y: -65px;
+@share-width: 18px;
+@share-height: 18px;
+@share-total-width: 228px;
+@share-total-height: 188px;
+@share-image: '../../static/sprites/sprite.png';
+@share: 204px 65px -204px -65px 18px 18px 228px 188px '../../static/sprites/sprite.png' 'share';
+@shopping-name: 'shopping';
+@shopping-x: 48px;
+@shopping-y: 164px;
+@shopping-offset-x: -48px;
+@shopping-offset-y: -164px;
+@shopping-width: 24px;
+@shopping-height: 24px;
+@shopping-total-width: 228px;
+@shopping-total-height: 188px;
+@shopping-image: '../../static/sprites/sprite.png';
+@shopping: 48px 164px -48px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'shopping';
+@star-name: 'star';
+@star-x: 178px;
+@star-y: 144px;
+@star-offset-x: -178px;
+@star-offset-y: -144px;
+@star-width: 13px;
+@star-height: 12px;
+@star-total-width: 228px;
+@star-total-height: 188px;
+@star-image: '../../static/sprites/sprite.png';
+@star: 178px 144px -178px -144px 13px 12px 228px 188px '../../static/sprites/sprite.png' 'star';
+@star1-name: 'star1';
+@star1-x: 191px;
+@star1-y: 144px;
+@star1-offset-x: -191px;
+@star1-offset-y: -144px;
+@star1-width: 13px;
+@star1-height: 12px;
+@star1-total-width: 228px;
+@star1-total-height: 188px;
+@star1-image: '../../static/sprites/sprite.png';
+@star1: 191px 144px -191px -144px 13px 12px 228px 188px '../../static/sprites/sprite.png' 'star1';
+@taste-name: 'taste';
+@taste-x: 48px;
+@taste-y: 68px;
+@taste-offset-x: -48px;
+@taste-offset-y: -68px;
+@taste-width: 48px;
+@taste-height: 48px;
+@taste-total-width: 228px;
+@taste-total-height: 188px;
+@taste-image: '../../static/sprites/sprite.png';
+@taste: 48px 68px -48px -68px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'taste';
+@trash-name: 'trash';
+@trash-x: 188px;
+@trash-y: 120px;
+@trash-offset-x: -188px;
+@trash-offset-y: -120px;
+@trash-width: 14px;
+@trash-height: 14px;
+@trash-total-width: 228px;
+@trash-total-height: 188px;
+@trash-image: '../../static/sprites/sprite.png';
+@trash: 188px 120px -188px -120px 14px 14px 228px 188px '../../static/sprites/sprite.png' 'trash';
+@two-world-name: 'two-world';
+@two-world-x: 0px;
+@two-world-y: 68px;
+@two-world-offset-x: 0px;
+@two-world-offset-y: -68px;
+@two-world-width: 48px;
+@two-world-height: 48px;
+@two-world-total-width: 228px;
+@two-world-total-height: 188px;
+@two-world-image: '../../static/sprites/sprite.png';
+@two-world: 0px 68px 0px -68px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'two-world';
+@up-defalt-name: 'up-defalt';
+@up-defalt-x: 214px;
+@up-defalt-y: 178px;
+@up-defalt-offset-x: -214px;
+@up-defalt-offset-y: -178px;
+@up-defalt-width: 12px;
+@up-defalt-height: 6px;
+@up-defalt-total-width: 228px;
+@up-defalt-total-height: 188px;
+@up-defalt-image: '../../static/sprites/sprite.png';
+@up-defalt: 214px 178px -214px -178px 12px 6px 228px 188px '../../static/sprites/sprite.png' 'up-defalt';
+@wechat-name: 'wechat';
+@wechat-x: 204px;
+@wechat-y: 0px;
+@wechat-offset-x: -204px;
+@wechat-offset-y: 0px;
+@wechat-width: 24px;
+@wechat-height: 24px;
+@wechat-total-width: 228px;
+@wechat-total-height: 188px;
+@wechat-image: '../../static/sprites/sprite.png';
+@wechat: 204px 0px -204px 0px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'wechat';
+@weibo-name: 'weibo';
+@weibo-x: 168px;
+@weibo-y: 164px;
+@weibo-offset-x: -168px;
+@weibo-offset-y: -164px;
+@weibo-width: 24px;
+@weibo-height: 24px;
+@weibo-total-width: 228px;
+@weibo-total-height: 188px;
+@weibo-image: '../../static/sprites/sprite.png';
+@weibo: 168px 164px -168px -164px 24px 24px 228px 188px '../../static/sprites/sprite.png' 'weibo';
+@women-name: 'women';
+@women-x: 68px;
+@women-y: 0px;
+@women-offset-x: -68px;
+@women-offset-y: 0px;
+@women-width: 48px;
+@women-height: 48px;
+@women-total-width: 228px;
+@women-total-height: 188px;
+@women-image: '../../static/sprites/sprite.png';
+@women: 68px 0px -68px 0px 48px 48px 228px 188px '../../static/sprites/sprite.png' 'women';
+@spritesheet-width: 228px;
+@spritesheet-height: 188px;
+@spritesheet-image: '../../static/sprites/sprite.png';
+@spritesheet-sprites: @add @arrow-left @cancel @canting @checkbox-default @checkbox-pressed @close @dis-subtract @down-defalt @edit @flagship @gifts @half-star @half-star1 @hide @house @like-pressed @like @loggend @login @maintain @membership-system @menu @more @my-account @news-more @notice @open @return-top @sale-service @search @service @service1 @share @shopping @star @star1 @taste @trash @two-world @up-defalt @wechat @weibo @women;
+@spritesheet: 228px 188px '../../static/sprites/sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
